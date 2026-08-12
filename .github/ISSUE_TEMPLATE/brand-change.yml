@@ -1,0 +1,63 @@
+name: Brand or asset change
+description: Propose a change to brand rules, tokens, templates, logos, photography, chapters, or partner material.
+title: "[Brand]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        A source asset or older deck is provenance, not automatic current approval. Do not upload sensitive or unapproved media to this issue.
+  - type: dropdown
+    id: change_type
+    attributes:
+      label: Change type
+      options:
+        - Observed brand rule
+        - Derived guidance
+        - Color or typography token
+        - Presentation template or layout
+        - Team1 or Avalanche identity asset
+        - Chapter or partner asset
+        - Photography or participant imagery
+        - Rights or distribution policy
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: Describe the exact change, intended audience, medium, and problem it solves.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source and provenance
+      description: Link or describe the newer approved source, authentic original file, date, and current status.
+    validations:
+      required: true
+  - type: textarea
+    id: approval
+    attributes:
+      label: Approval and rights context
+      description: Identify the relevant approval role and record what use, channel, territory, participants, or partner relationship was approved. Do not include private contact details.
+    validations:
+      required: true
+  - type: textarea
+    id: impact
+    attributes:
+      label: Compatibility and migration impact
+      description: Note affected assets, tokens, layouts, prompts, existing artifacts, and release/version needs.
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Visual evidence
+      description: Attach a sanitized before/after render or contact sheet when available.
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Approval boundaries
+      options:
+        - label: I understand that repository access, a test pass, or silence is not brand or publication approval.
+          required: true
+        - label: I am authorized to submit any attached asset and have removed sensitive information.
+          required: true

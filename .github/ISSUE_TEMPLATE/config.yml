@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Team1 design-system guide
+    url: https://github.com/avalancheteam1/design-system#readme
+    about: Start with installation, usage, contribution, and approval guidance.
+  - name: Latest private release
+    url: https://github.com/avalancheteam1/design-system/releases/latest
+    about: Download the current packaged team1-design-system skill while signed in.

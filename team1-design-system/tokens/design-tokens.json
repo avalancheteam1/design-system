@@ -1,0 +1,160 @@
+{
+  "format": "team1-agent-skill-tokens/1",
+  "source": "Team1 Overview.pptx",
+  "color": {
+    "canvas": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "Observed primary canvas"
+    },
+    "text": {
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "$description": "Observed primary narrative type"
+    },
+    "signal": {
+      "$type": "color",
+      "$value": "#FF394A",
+      "$description": "Observed content signal for metrics, labels, and emphasis"
+    },
+    "structure": {
+      "$type": "color",
+      "$value": "#E84142",
+      "$description": "Observed structural and Avalanche red for dividers and source accents"
+    },
+    "themeAccent": {
+      "$type": "color",
+      "$value": "#F5384B",
+      "$description": "Observed presentation theme accent; preserve on theme-linked objects"
+    },
+    "surfaceCard": {
+      "$type": "color",
+      "$value": "#141414",
+      "$description": "Observed dark card and callout surface"
+    },
+    "surfaceCharcoal": {
+      "$type": "color",
+      "$value": "#161618",
+      "$description": "Observed theme charcoal"
+    },
+    "nearWhite": {
+      "$type": "color",
+      "$value": "#F5F5F9",
+      "$description": "Observed softer light role"
+    },
+    "digitalBlue": {
+      "$type": "color",
+      "$value": "#3055B3",
+      "$description": "Observed secondary digital accent"
+    },
+    "brightBlue": {
+      "$type": "color",
+      "$value": "#348BFF",
+      "$description": "Observed secondary bright digital accent"
+    }
+  },
+  "typography": {
+    "overview": {
+      "displayFamily": {
+        "$type": "fontFamily",
+        "$value": "Kanit Medium"
+      },
+      "bodyFamily": {
+        "$type": "fontFamily",
+        "$value": "Inter"
+      },
+      "supportFamily": {
+        "$type": "fontFamily",
+        "$value": "Inter SemiBold"
+      }
+    },
+    "editorial": {
+      "family": {
+        "$type": "fontFamily",
+        "$value": "Helvetica Neue"
+      }
+    },
+    "fallback": {
+      "$type": "fontFamily",
+      "$value": "Arial",
+      "$description": "Theme fallback only; not a brand face"
+    },
+    "presentationObservedPt": {
+      "title": {
+        "$type": "dimension",
+        "$value": "24-32pt"
+      },
+      "moduleHeading": {
+        "$type": "dimension",
+        "$value": "13-18pt"
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": "13-17pt"
+      },
+      "metric": {
+        "$type": "dimension",
+        "$value": "32-43pt"
+      },
+      "pageNumber": {
+        "$type": "dimension",
+        "$value": "6pt"
+      }
+    }
+  },
+  "presentation": {
+    "aspectRatio": {
+      "$type": "string",
+      "$value": "16:9"
+    },
+    "width": {
+      "$type": "dimension",
+      "$value": "10in"
+    },
+    "height": {
+      "$type": "dimension",
+      "$value": "5.625in"
+    },
+    "inspectionWidth": {
+      "$type": "dimension",
+      "$value": "960px"
+    },
+    "inspectionHeight": {
+      "$type": "dimension",
+      "$value": "540px"
+    },
+    "observedSideMargin": {
+      "$type": "dimension",
+      "$value": "42px",
+      "$description": "Approximate at the 960x540 inspection scale"
+    },
+    "observedTopMargin": {
+      "$type": "dimension",
+      "$value": "41px",
+      "$description": "Approximate at the 960x540 inspection scale"
+    }
+  },
+  "composition": {
+    "primaryEmphases": {
+      "$type": "number",
+      "$value": 1
+    },
+    "metricMaximumPerFrame": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Preferred proof hierarchy for a single metric story, not a universal hard limit"
+    },
+    "backgroundModePrimary": {
+      "$type": "string",
+      "$value": "dark-grid-framed"
+    },
+    "cornerTreatment": {
+      "$type": "string",
+      "$value": "fine-red-inset-frame-with-square-anchors"
+    },
+    "glowTreatment": {
+      "$type": "string",
+      "$value": "restrained-red-at-edges-and-corners"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+:root {
+  --team1-color-canvas: #000000;
+  --team1-color-text: #ffffff;
+  --team1-color-signal: #ff394a;
+  --team1-color-structure: #e84142;
+  --team1-color-theme-accent: #f5384b;
+  --team1-color-surface-card: #141414;
+  --team1-color-surface-charcoal: #161618;
+  --team1-color-near-white: #f5f5f9;
+  --team1-color-digital-blue: #3055b3;
+  --team1-color-bright-blue: #348bff;
+
+  --team1-font-display: "Kanit Medium", "Kanit", "Inter", sans-serif;
+  --team1-font-body: "Inter", Arial, sans-serif;
+  --team1-font-editorial: "Helvetica Neue", "Inter", Arial, sans-serif;
+
+  --team1-presentation-aspect-ratio: 16 / 9;
+  --team1-surface-card: var(--team1-color-surface-card);
+}
+
+/*
+  CSS is a convenience export. design-tokens.json is canonical.
+  Confirm text contrast, responsive behavior, and font availability in the final medium.
+*/

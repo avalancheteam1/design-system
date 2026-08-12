@@ -1,0 +1,30 @@
+{
+  "schemaVersion": "1",
+  "id": "team1-design-system",
+  "version": "1.0.0",
+  "released": "2026-08-12",
+  "entrypoint": "SKILL.md",
+  "format": "https://agentskills.io/specification",
+  "portable": true,
+  "networkRequired": false,
+  "notice": "NOTICE.md",
+  "source": {
+    "name": "Team1 Overview.pptx",
+    "sha256": "8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0"
+  },
+  "capabilities": [
+    "presentations",
+    "event-collateral",
+    "social-graphics",
+    "documents",
+    "web-visuals",
+    "brand-review"
+  ],
+  "canonicalResources": {
+    "tokens": "tokens/design-tokens.json",
+    "assetIndex": "assets/asset-index.json",
+    "editablePresentation": "templates/Team1 Design System.pptx",
+    "visualReference": "templates/Team1 Design System.pdf",
+    "qualityGate": "references/qa-checklist.md"
+  }
+}

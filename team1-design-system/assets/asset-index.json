@@ -1,0 +1,340 @@
+{
+  "schemaVersion": "1",
+  "source": {
+    "name": "Team1 Overview.pptx",
+    "sha256": "8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0"
+  },
+  "excluded": [
+    {
+      "sourceFile": "image42.png",
+      "reason": "Legacy QR destination and approval were not verified"
+    },
+    {
+      "sourceFile": "image13.png",
+      "reason": "Legacy poster contains a QR whose destination and approval were not verified"
+    }
+  ],
+  "assets": [
+    {
+      "path": "assets/logos/team1-wordmark-white-red.png",
+      "sourceFile": "image8.png",
+      "category": "logo",
+      "role": "Primary Team1 wordmark for dark fields",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/logos/team1-mark-white-red.png",
+      "sourceFile": "image2.png",
+      "category": "logo",
+      "role": "Compact Team1 footer and small-format mark",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/logos/avalanche-wordmark-white.png",
+      "sourceFile": "image1.png",
+      "category": "logo",
+      "role": "Avalanche endorsement for dark fields",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/logos/avalanche-wordmark-red.png",
+      "sourceFile": "image4.png",
+      "category": "logo",
+      "role": "Avalanche endorsement for light fields",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/logos/ambassador-dao-red-white.png",
+      "sourceFile": "image10.png",
+      "category": "legacy-logo",
+      "role": "Historical Ambassador DAO reference",
+      "status": "legacy-reference-only",
+      "modifiable": false
+    },
+    {
+      "path": "assets/logos/avalanche-colombia-white.png",
+      "sourceFile": "image15.png",
+      "category": "regional-logo",
+      "role": "Avalanche Colombia source mark",
+      "status": "verify-current-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/backgrounds/team1-grid-unframed-dark.png",
+      "sourceFile": "image6.png",
+      "category": "background",
+      "role": "Dark cover, bumper, and photo-mosaic canvas",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/backgrounds/team1-grid-framed-dark.png",
+      "sourceFile": "image7.png",
+      "category": "background",
+      "role": "Primary dark content canvas with frame and corner anchors",
+      "status": "core-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/backgrounds/team1-grid-framed-light.png",
+      "sourceFile": "image9.png",
+      "category": "background",
+      "role": "Supported light framed canvas; not demonstrated in visible source slides",
+      "status": "source-supported-secondary",
+      "modifiable": false
+    },
+    {
+      "path": "assets/backgrounds/team1-grid-unframed-light.png",
+      "sourceFile": "image11.png",
+      "category": "background",
+      "role": "Supported light unframed canvas; not demonstrated in visible source slides",
+      "status": "source-supported-secondary",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-usa.png",
+      "sourceFile": "image12.png",
+      "category": "chapter-tile",
+      "role": "USA source chapter tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-turkiye.png",
+      "sourceFile": "image17.png",
+      "category": "chapter-tile",
+      "role": "Türkiye source chapter tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-latam.png",
+      "sourceFile": "image22.png",
+      "category": "chapter-tile",
+      "role": "LATAM source regional tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-india.png",
+      "sourceFile": "image27.png",
+      "category": "chapter-tile",
+      "role": "India source chapter tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-vietnam.png",
+      "sourceFile": "image34.png",
+      "category": "chapter-tile",
+      "role": "Vietnam source chapter tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/chapters/team1-brasil.png",
+      "sourceFile": "image37.png",
+      "category": "chapter-tile",
+      "role": "Brasil source chapter tile",
+      "status": "verify-current-label-and-approval",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-universities.png",
+      "sourceFile": "image24.png",
+      "category": "metric-tile",
+      "role": "Universities metric specimen",
+      "status": "verify-baked-claim-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-luma-subscribers.png",
+      "sourceFile": "image25.png",
+      "category": "metric-tile",
+      "role": "Luma subscribers metric specimen",
+      "status": "verify-baked-claim-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-jobs.png",
+      "sourceFile": "image28.png",
+      "category": "metric-tile",
+      "role": "Jobs metric specimen",
+      "status": "verify-baked-claim-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-countries.png",
+      "sourceFile": "image29.png",
+      "category": "metric-tile",
+      "role": "Countries metric specimen",
+      "status": "verify-baked-claim-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-grants.png",
+      "sourceFile": "image30.png",
+      "category": "metric-tile",
+      "role": "Grants icon specimen",
+      "status": "verify-program-status-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/icons/metric-members.png",
+      "sourceFile": "image31.png",
+      "category": "metric-tile",
+      "role": "Members metric specimen",
+      "status": "verify-baked-claim-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/graphics/team1-red-wireframe-device.png",
+      "sourceFile": "image35.png",
+      "category": "graphic-device",
+      "role": "Red wireframe Avalanche/Team1 visual",
+      "status": "source-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/graphics/partner-ecosystem-mosaic.png",
+      "sourceFile": "image40.png",
+      "category": "partner-graphic",
+      "role": "Source partner ecosystem mosaic",
+      "status": "verify-every-partner-before-use",
+      "modifiable": false
+    },
+    {
+      "path": "assets/graphics/team1-community-mosaic-mark.png",
+      "sourceFile": "image41.png",
+      "category": "expressive-graphic",
+      "role": "Community-mosaic Team1 hero mark",
+      "status": "source-authentic-not-primary-logo",
+      "modifiable": false
+    },
+    {
+      "path": "assets/graphics/avalanche-community-mosaic-mark.png",
+      "sourceFile": "image44.png",
+      "category": "expressive-graphic",
+      "role": "Community-mosaic Avalanche hero mark",
+      "status": "source-authentic-not-primary-logo",
+      "modifiable": false
+    },
+    {
+      "path": "assets/graphics/team1-red-cinematic-hero.png",
+      "sourceFile": "image46.png",
+      "category": "hero-graphic",
+      "role": "Cinematic Team1 closing or CTA visual",
+      "status": "source-authentic",
+      "modifiable": false
+    },
+    {
+      "path": "assets/photography/community-transit.jpg",
+      "sourceFile": "image14.jpg",
+      "category": "photography",
+      "role": "Community in transit",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/avalanche-colombia-group.jpg",
+      "sourceFile": "image16.jpg",
+      "category": "photography",
+      "role": "Avalanche Colombia group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/hackathon-builders.png",
+      "sourceFile": "image18.png",
+      "category": "photography",
+      "role": "Hackathon builders in action",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/community-event-group.png",
+      "sourceFile": "image19.png",
+      "category": "photography",
+      "role": "Community event group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/community-conference-group.png",
+      "sourceFile": "image20.png",
+      "category": "photography",
+      "role": "Conference community group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/workshop-classroom.jpg",
+      "sourceFile": "image21.jpg",
+      "category": "photography",
+      "role": "Workshop/classroom participation",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/community-banner-group.png",
+      "sourceFile": "image23.png",
+      "category": "photography",
+      "role": "Community group with banner",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/outdoor-community-group.png",
+      "sourceFile": "image26.png",
+      "category": "photography",
+      "role": "Outdoor community group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/large-community-group.png",
+      "sourceFile": "image32.png",
+      "category": "photography",
+      "role": "Large community group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/brand-activation.jpg",
+      "sourceFile": "image33.jpg",
+      "category": "photography",
+      "role": "Live brand activation",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/venue-community-group.png",
+      "sourceFile": "image36.png",
+      "category": "photography",
+      "role": "Large venue community group",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/branded-collateral.png",
+      "sourceFile": "image39.png",
+      "category": "photography",
+      "role": "Branded physical collateral detail",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/community-talk.png",
+      "sourceFile": "image43.png",
+      "category": "photography",
+      "role": "Community talk in progress",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/women-community-event.png",
+      "sourceFile": "image45.png",
+      "category": "photography",
+      "role": "Women community event",
+      "status": "source-photo-verify-reuse-context"
+    },
+    {
+      "path": "assets/photography/living-room-community.png",
+      "sourceFile": "image47.png",
+      "category": "photography",
+      "role": "Informal living-room community gathering",
+      "status": "source-photo-verify-reuse-context"
+    }
+  ]
+}

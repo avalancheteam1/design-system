@@ -1,0 +1,64 @@
+name: Installation or usage help
+description: Ask for help installing, loading, or using the Team1 design-system skill.
+title: "[Help]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove secrets, private attendee data, personal contact details, and sensitive media before submitting.
+  - type: dropdown
+    id: harness
+    attributes:
+      label: Agent harness
+      options:
+        - Codex or ChatGPT
+        - Claude Code
+        - OpenClaw
+        - Hermes Agent
+        - Other or custom harness
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Harness and package versions
+      description: Include the agent version when known and the Team1 package version.
+      placeholder: "Codex current; team1-design-system 1.0.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: installation
+    attributes:
+      label: Installation method
+      options:
+        - GitHub release ZIP
+        - Local folder copy
+        - Project-scoped skill
+        - Agent upload interface
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the expected result, actual result, and the exact folder containing SKILL.md.
+    validations:
+      required: true
+  - type: textarea
+    id: attempts
+    attributes:
+      label: Checks already tried
+      description: Include whether you kept the full folder, restarted the agent, and ran the validator.
+  - type: textarea
+    id: output
+    attributes:
+      label: Sanitized output or screenshot
+      description: Paste validator output or attach a screenshot after removing private information.
+  - type: checkboxes
+    id: acknowledgement
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed secrets, private participant data, and unnecessary personal information.
+          required: true

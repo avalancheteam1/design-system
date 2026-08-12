@@ -1,0 +1,34 @@
+# macOS and Windows metadata
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Generated packages and release outputs
+/build/
+/dist/
+/release/
+/releases/
+/*.zip

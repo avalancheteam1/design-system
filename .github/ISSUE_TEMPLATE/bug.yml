@@ -1,0 +1,57 @@
+name: Package or validator bug
+description: Report a reproducible problem with files, links, validation, assets, or templates.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use the help form for setup questions. Follow SECURITY.md instead if the report contains secrets, personal data, exploit details, or sensitive media.
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system, agent/editor, and relevant versions.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+      description: Provide the smallest reliable sequence that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized evidence
+      description: Include validator output, affected paths, or visual evidence without private information.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checks
+      options:
+        - label: I searched existing issues for this problem.
+          required: true
+        - label: I removed secrets, private participant data, and unnecessary personal information.
+          required: true
+        - label: This report does not require private security handling under SECURITY.md.
+          required: true
