@@ -1,0 +1,35 @@
+<svg width="2000" height="2000" viewBox="0 0 2000 2000" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_74_190)">
+<rect width="2000" height="2000" fill="white"/>
+<g filter="url(#filter0_fn_74_190)">
+<path d="M-777.001 2317.81L1999.81 -458.999L2458.36 -0.442993L-318.444 2776.37L-777.001 2317.81Z" fill="#2D2A4A"/>
+<path d="M-1213.97 252.527L1562.84 3029.34L1104.28 3487.89L-1672.53 711.083L-1213.97 252.527Z" fill="#2D2A4A"/>
+<path d="M-1703.5 1370L1073.31 -1406.81L1306.46 -1165.5L1629.43 -834.373L-1147.38 1942.43L-1703.5 1370Z" fill="#A51931"/>
+<path d="M159.525 3029.34L2936.33 252.527L3493.81 848.192L717.001 3625L159.525 3029.34Z" fill="#A51931"/>
+<path d="M556.364 -885.809L2336.17 894L2794.73 435.444L1014.92 -1344.37L556.364 -885.809Z" fill="#2D2A4A"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_fn_74_190" x="-2209.7" y="-1913.01" width="6209.71" height="6044.21" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="253.1" result="effect1_foregroundBlur_74_190"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.90909087657928467 0.90909087657928467" stitchTiles="stitch" numOctaves="3" result="noise" seed="9936" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="effect1_foregroundBlur_74_190" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="rgba(0, 0, 0, 0.25)" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect2_noise_74_190">
+<feMergeNode in="effect1_foregroundBlur_74_190" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+<clipPath id="clip0_74_190">
+<rect width="2000" height="2000" fill="white"/>
+</clipPath>
+</defs>
+</svg>
+

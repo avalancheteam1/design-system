@@ -33,7 +33,7 @@ Silence is not approval. A test pass proves package integrity, not brand, legal,
 
 ## Authority order
 
-When sources conflict, use the authority order documented in the [package guide](team1-design-system/README.md): a current verified brief or newer explicitly approved source outranks bundled assets, tokens, written rules, examples, and agent judgment.
+When sources conflict, use the hierarchy in the package [authority guide](team1-design-system/references/authority.md). A newer source supersedes the pinned global system only when the relevant Team1 owner explicitly approved it and its date, owner, and scope are recorded; a requester brief alone does not redefine the identity.
 
 Do not silently blend conflicting sources. Record the conflict in the issue or pull request and ask the appropriate steward to decide.
 

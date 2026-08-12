@@ -1,13 +1,13 @@
 # Usage notice
 
-This package documents and bundles visual material extracted from a Team1 presentation supplied for Team1 community work. It does not create or grant a trademark, copyright, publicity, font, or redistribution license.
+This private package supports authorized Team1 community work. It does not create or grant a trademark, copyright, publicity, photography, partner-asset, font, or external redistribution license.
 
-Team1, Avalanche, Ambassador DAO, chapter, program, and partner marks remain the property of their respective owners. Use authentic files without alteration and only in contexts authorized by the relevant owner or community lead.
+Team1, Avalanche, chapter, program, event, and partner marks remain the property of their owners. Use authentic assets without alteration and only in an approved context. Access to this repository does not by itself authorize public redistribution.
 
-Documentary photographs and people depicted in them may have context-specific permissions. Confirm the intended channel, territory, event, and public/commercial use before republishing outside established Team1 community communications.
+No font binaries are redistributed. Font names and settings are specifications only. Obtain Kanit, Aeonik, Inter, Neuropol X, Helvetica Neue, or any substitute from an authorized source and retain its license. Aeonik and Neuropol X require particular licensing care.
 
-No font binaries are redistributed. Kanit and Inter are referenced by name; obtain them from their official distributors and retain their license files. Helvetica Neue must come from a licensed local installation.
+The package excludes participant/member media and personal data. Any externally supplied photo, video, voice, testimonial, application, attendance record, or headshot requires a documented source, permission/consent, intended channels, territory, expiry, and privacy review.
 
-The package intentionally excludes the legacy QR code found in the source presentation. Current links, handles, metrics, chapter status, program names, and partner relationships must be verified before publication.
+No QR payload is bundled as a reusable destination. Verify the approved URL, privacy context, owner, tracking, and expiry; include a visible fallback; scan the final export or physical proof.
 
-Package instructions, convenience tokens, and validation code are provided as operational material. Team1 maintainers should add the organization’s chosen release license and distribution policy before publishing through a public registry.
+Chapter status, metrics, dates, links, handles, program names, event details, partners, sponsors, and calls to action are time-sensitive. Verify them at publication time. A successful test or merged change is not brand, rights, partner, or publication approval.

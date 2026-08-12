@@ -2,7 +2,7 @@
 
 The shared Team1 visual system for people and AI agents. It includes authentic assets, reusable presentation frames, machine-readable tokens, practical brand guidance, and one portable Agent Skill that works across supported agent harnesses.
 
-![Contact sheet showing the Team1 design system](team1-design-system/previews/design-system-contact-sheet.png)
+![Current Team1 presentation master contact sheet](team1-design-system/previews/current-presentation-master-contact-sheet.png)
 
 > This is a private Team1 repository. You need `avalancheteam1` organization membership or explicit repository access. Repository access is not, by itself, permission to republish every photograph, partner mark, chapter asset, or historical claim.
 
@@ -38,13 +38,16 @@ Exact paths, commands, verification steps, and the universal fallback are in the
 
 - [`SKILL.md`](team1-design-system/SKILL.md) — canonical agent workflow and non-negotiable rules.
 - [Package guide](team1-design-system/README.md) — authority order, contents, and usage boundaries.
-- [Brand system](team1-design-system/references/brand-system.md) — source-evidenced colors, typography, identity, imagery, and voice.
-- [Presentation layouts](team1-design-system/references/presentation-layouts.md) — reusable frame chooser and edit contract.
-- [Collateral guidance](team1-design-system/references/collateral-guidance.md) — social, print, document, and web translations.
-- [QA checklist](team1-design-system/references/qa-checklist.md) — factual, visual, accessibility, and export checks.
+- [Authority](team1-design-system/references/authority.md) and [identity](team1-design-system/references/identity.md) — current source order, global colors, type, marks, and naming.
+- [Presentations](team1-design-system/references/presentations.md) — current master selection and inherited-layout contract.
+- [Web](team1-design-system/references/digital-and-web.md), [social](team1-design-system/references/social-and-content.md), [events/print](team1-design-system/references/events-print-and-merch.md), and [regional](team1-design-system/references/regional-and-localization.md) guidance.
+- [Governance and QA](team1-design-system/references/governance-and-qa.md) — factual, visual, accessibility, rights, functional, export, and go-live checks.
+- [Photography and video](team1-design-system/references/photography-and-video.md) and [voice and copy](team1-design-system/references/voice-and-copy.md) — consent-aware production and plain-language editorial rules.
 - [Asset index](team1-design-system/assets/asset-index.json) — provenance, role, and status for each bundled asset.
 - [Design tokens](team1-design-system/tokens/design-tokens.json) — canonical machine-readable colors and typography roles.
 - Editable PowerPoint and read-only PDF references in [`templates/`](team1-design-system/templates/).
+- [Sanitized Drive source audit](docs/SOURCE_AUDIT_2026-08-12.md) — authority decisions, coverage, v1 gaps, and exclusions without member data.
+- [Clean-room evaluation](docs/EVALUATION_2026-08-12.md) — reproducible scenario method, baselines, frozen response hashes, and final v2 scores.
 
 ## Validate a checkout
 

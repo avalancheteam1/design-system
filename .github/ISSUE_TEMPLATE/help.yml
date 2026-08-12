@@ -23,7 +23,7 @@ body:
     attributes:
       label: Harness and package versions
       description: Include the agent version when known and the Team1 package version.
-      placeholder: "Codex current; team1-design-system 1.0.0"
+      placeholder: "Codex current; team1-design-system 2.0.0"
     validations:
       required: true
   - type: dropdown

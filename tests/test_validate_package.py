@@ -3,6 +3,7 @@ import importlib.util
 import json
 import tempfile
 import unittest
+import zipfile
 from pathlib import Path
 
 
@@ -62,9 +63,12 @@ metadata:
                 "color": {
                     "canvas": {"$type": "color", "$value": "#000000"},
                     "text": {"$type": "color", "$value": "#FFFFFF"},
-                    "signal": {"$type": "color", "$value": "#FF394A"},
-                    "structure": {"$type": "color", "$value": "#E84142"},
-                    "themeAccent": {"$type": "color", "$value": "#F5384B"},
+                    "brand": {"$type": "color", "$value": "#E6212F"},
+                    "avaBlue": {"$type": "color", "$value": "#3055B3"},
+                    "secondaryBlue": {"$type": "color", "$value": "#058AFF"},
+                    "darkSurface": {"$type": "color", "$value": "#161617"},
+                    "lightSurface": {"$type": "color", "$value": "#F5F5F9"},
+                    "error": {"$type": "color", "$value": "#dc2626"},
                 }
             }
         ),
@@ -73,12 +77,18 @@ metadata:
         skill_root / "assets" / "asset-index.json",
         json.dumps(
             {
-                "schemaVersion": "1",
+                "schemaVersion": "2",
                 "assets": [
                     {
                         "path": "assets/logos/team1-mark.png",
+                        "category": "identity",
                         "role": "approved Team1 mark",
-                        "source": "Team1 Overview.pptx",
+                        "status": "current-approved-source",
+                        "authority": "current-global",
+                        "source": "fixture",
+                        "sha256": hashlib.sha256(b"fixture").hexdigest(),
+                        "modifiable": False,
+                        "rights": "authorized-use-only",
                     }
                 ],
             }
@@ -120,6 +130,33 @@ class PackageValidatorTests(unittest.TestCase):
             errors = self.validator.validate(skill_root)
             self.assertTrue(any("asset index missing entry" in error for error in errors))
 
+    def test_indexed_asset_hash_is_verified(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            write_text(skill_root / "assets" / "logos" / "team1-mark.png", "changed")
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("indexed asset hash mismatch" in error for error in errors))
+
+    def test_duplicate_indexed_asset_is_reported(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            index_path = skill_root / "assets" / "asset-index.json"
+            index = json.loads(index_path.read_text(encoding="utf-8"))
+            index["assets"].append(dict(index["assets"][0]))
+            write_text(index_path, json.dumps(index))
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("duplicate indexed asset" in error for error in errors))
+
+    def test_v2_asset_metadata_is_required(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            index_path = skill_root / "assets" / "asset-index.json"
+            index = json.loads(index_path.read_text(encoding="utf-8"))
+            del index["assets"][0]["rights"]
+            write_text(index_path, json.dumps(index))
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("asset entry missing metadata" in error for error in errors))
+
     def test_manifest_top_level_must_be_an_object(self):
         with tempfile.TemporaryDirectory() as tmp:
             skill_root = build_minimal_skill(Path(tmp))
@@ -148,15 +185,15 @@ class PackageValidatorTests(unittest.TestCase):
             errors = self.validator.validate(skill_root)
             self.assertTrue(any("absolute maintainer path" in error for error in errors))
 
-    def test_three_brand_red_roles_are_required(self):
+    def test_current_global_brand_colors_are_required(self):
         with tempfile.TemporaryDirectory() as tmp:
             skill_root = build_minimal_skill(Path(tmp))
             token_path = skill_root / "tokens" / "design-tokens.json"
             tokens = json.loads(token_path.read_text(encoding="utf-8"))
-            del tokens["color"]["structure"]
+            del tokens["color"]["brand"]
             write_text(token_path, json.dumps(tokens))
             errors = self.validator.validate(skill_root)
-            self.assertTrue(any("#E84142" in error for error in errors))
+            self.assertTrue(any("#E6212F" in error for error in errors))
 
     def test_checksum_manifest_must_cover_every_package_file(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -165,6 +202,22 @@ class PackageValidatorTests(unittest.TestCase):
             write_text(skill_root / "checksums.sha256", f"{skill_hash}  SKILL.md\n")
             errors = self.validator.validate(skill_root)
             self.assertTrue(any("checksum manifest missing entry" in error for error in errors))
+
+    def test_checksum_manifest_rejects_unexpected_entry(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            updater = load_module("team1_checksum_updater_unexpected", UPDATER_PATH)
+            updater.update_checksums(skill_root)
+            manifest = skill_root / "checksums.sha256"
+            manifest.write_text(
+                manifest.read_text(encoding="utf-8")
+                + f"{'0' * 64}  missing.txt\n",
+                encoding="utf-8",
+            )
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(
+                any("checksum manifest has unexpected entry" in error for error in errors)
+            )
 
     def test_checksum_paths_must_stay_inside_package(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -176,6 +229,53 @@ class PackageValidatorTests(unittest.TestCase):
             write_text(skill_root / "checksums.sha256", f"{outside_hash}  ../outside.txt\n")
             errors = self.validator.validate(skill_root)
             self.assertTrue(any("checksum path is unsafe" in error for error in errors))
+
+    def test_symlinked_checksum_target_must_stay_inside_package(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            skill_root = build_minimal_skill(temp_root)
+            outside = temp_root / "outside.txt"
+            write_text(outside, "outside")
+            link = skill_root / "outside-link.txt"
+            link.symlink_to(outside)
+            checksum = hashlib.sha256(outside.read_bytes()).hexdigest()
+            checksum_path = skill_root / "checksums.sha256"
+            updater = load_module("team1_checksum_updater_symlink", UPDATER_PATH)
+            updater.update_checksums(skill_root)
+            checksum_path.write_text(
+                checksum_path.read_text(encoding="utf-8")
+                + f"{checksum}  outside-link.txt\n",
+                encoding="utf-8",
+            )
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("checksum path is unsafe" in error for error in errors))
+
+    def test_symlinked_indexed_asset_must_stay_inside_package(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            temp_root = Path(tmp)
+            skill_root = build_minimal_skill(temp_root)
+            outside = temp_root / "outside.svg"
+            write_text(outside, "outside")
+            link = skill_root / "assets" / "logos" / "outside.svg"
+            link.symlink_to(outside)
+            index_path = skill_root / "assets" / "asset-index.json"
+            index = json.loads(index_path.read_text(encoding="utf-8"))
+            index["assets"].append(
+                {
+                    "path": "assets/logos/outside.svg",
+                    "category": "identity",
+                    "role": "fixture",
+                    "status": "fixture",
+                    "authority": "fixture",
+                    "source": "fixture",
+                    "sha256": hashlib.sha256(outside.read_bytes()).hexdigest(),
+                    "modifiable": False,
+                    "rights": "fixture",
+                }
+            )
+            write_text(index_path, json.dumps(index))
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("indexed asset path is unsafe" in error for error in errors))
 
     def test_checksum_updater_covers_portable_files(self):
         self.assertTrue(UPDATER_PATH.is_file(), "checksum updater is missing")
@@ -189,6 +289,32 @@ class PackageValidatorTests(unittest.TestCase):
             manifest = (skill_root / "checksums.sha256").read_text(encoding="utf-8")
             self.assertIn("examples/prompt.md", manifest)
             self.assertNotIn("checksums.sha256", manifest)
+
+    def test_validator_rejects_unsafe_pptx_payloads(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            template = skill_root / "templates" / "unsafe.pptx"
+            template.parent.mkdir(parents=True, exist_ok=True)
+            with zipfile.ZipFile(template, "w") as archive:
+                archive.writestr("ppt/fonts/font1.dat", b"font")
+                archive.writestr(
+                    "ppt/slides/_rels/slide1.xml.rels",
+                    b'<Relationship TargetMode="External" Target="https://example.com"/>',
+                )
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("embedded font payload" in error for error in errors))
+            self.assertTrue(any("external relationship" in error for error in errors))
+
+    def test_validator_rejects_unsafe_pdf_payloads(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            skill_root = build_minimal_skill(Path(tmp))
+            write_text(
+                skill_root / "templates" / "unsafe.pdf",
+                "%PDF-1.4\n/FontFile2 /JavaScript /EmbeddedFile /URI\n%%EOF\n",
+            )
+            errors = self.validator.validate(skill_root)
+            self.assertTrue(any("embedded font program" in error for error in errors))
+            self.assertTrue(any("active or external content" in error for error in errors))
 
 
 if __name__ == "__main__":

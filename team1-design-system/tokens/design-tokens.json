@@ -1,160 +1,94 @@
 {
-  "format": "team1-agent-skill-tokens/1",
-  "source": "Team1 Overview.pptx",
-  "color": {
-    "canvas": {
-      "$type": "color",
-      "$value": "#000000",
-      "$description": "Observed primary canvas"
-    },
-    "text": {
-      "$type": "color",
-      "$value": "#FFFFFF",
-      "$description": "Observed primary narrative type"
-    },
-    "signal": {
-      "$type": "color",
-      "$value": "#FF394A",
-      "$description": "Observed content signal for metrics, labels, and emphasis"
-    },
-    "structure": {
-      "$type": "color",
-      "$value": "#E84142",
-      "$description": "Observed structural and Avalanche red for dividers and source accents"
-    },
-    "themeAccent": {
-      "$type": "color",
-      "$value": "#F5384B",
-      "$description": "Observed presentation theme accent; preserve on theme-linked objects"
-    },
-    "surfaceCard": {
-      "$type": "color",
-      "$value": "#141414",
-      "$description": "Observed dark card and callout surface"
-    },
-    "surfaceCharcoal": {
-      "$type": "color",
-      "$value": "#161618",
-      "$description": "Observed theme charcoal"
-    },
-    "nearWhite": {
-      "$type": "color",
-      "$value": "#F5F5F9",
-      "$description": "Observed softer light role"
-    },
-    "digitalBlue": {
-      "$type": "color",
-      "$value": "#3055B3",
-      "$description": "Observed secondary digital accent"
-    },
-    "brightBlue": {
-      "$type": "color",
-      "$value": "#348BFF",
-      "$description": "Observed secondary bright digital accent"
-    }
-  },
-  "typography": {
-    "overview": {
-      "displayFamily": {
-        "$type": "fontFamily",
-        "$value": "Kanit Medium"
+  "format": "team1-design-tokens/2",
+  "authoritySnapshot": "2026-08-12",
+  "global": {
+    "color": {
+      "brand": {
+        "primary": {"$type": "color", "$value": "#E6212F"},
+        "hover": {"$type": "color", "$value": "#e02d3d"},
+        "gradientEnd": {"$type": "color", "$value": "#d02938"}
       },
-      "bodyFamily": {
-        "$type": "fontFamily",
-        "$value": "Inter"
+      "accent": {
+        "avaBlue": {"$type": "color", "$value": "#3055B3"},
+        "secondaryBlue": {"$type": "color", "$value": "#058AFF"}
       },
-      "supportFamily": {
-        "$type": "fontFamily",
-        "$value": "Inter SemiBold"
+      "dark": {
+        "background": {"$type": "color", "$value": "#000000"},
+        "surface": {"$type": "color", "$value": "#161617"},
+        "surfaceVariant": {"$type": "color", "$value": "#1a1b1c"},
+        "surfaceHover": {"$type": "color", "$value": "#2a2b2c"},
+        "textBrand": {"$type": "color", "$value": "#E6212F", "$description": "Official source role for approved headings and emphasis; test contrast in context"},
+        "textHighContrast": {"$type": "color", "$value": "#FFFFFF", "$description": "Derived semantic name for readable high-contrast copy on dark surfaces"},
+        "textSecondary": {"$type": "color", "$value": "#e5e7eb"},
+        "textTertiary": {"$type": "color", "$value": "#9ca3af"},
+        "border": {"$type": "color", "$value": "#2a2d31"}
+      },
+      "light": {
+        "background": {"$type": "color", "$value": "#FFFFFF"},
+        "surface": {"$type": "color", "$value": "#F5F5F9"},
+        "surfaceVariant": {"$type": "color", "$value": "#e8e9ec"},
+        "surfaceHover": {"$type": "color", "$value": "#d8d9dc"},
+        "textBrand": {"$type": "color", "$value": "#E6212F", "$description": "Official source role for approved headings and emphasis; test contrast in context"},
+        "textHighContrast": {"$type": "color", "$value": "#161617", "$description": "Derived semantic name for readable high-contrast copy on light surfaces"},
+        "textTertiary": {"$type": "color", "$value": "#6c757d"},
+        "border": {"$type": "color", "$value": "#d8d9dc"}
+      },
+      "status": {
+        "success": {"$type": "color", "$value": "#16a34a"},
+        "warning": {"$type": "color", "$value": "#f59e0b"},
+        "error": {"$type": "color", "$value": "#dc2626", "$description": "Never substitute Team1 brand red for errors"},
+        "info": {"$type": "color", "$value": "#2563eb"},
+        "featured": {"$type": "color", "$value": "#9333ea"}
+      },
+      "social": {
+        "discord": {"$type": "color", "$value": "#5865F2"},
+        "x": {"$type": "color", "$value": "#1a1a1a"}
       }
     },
-    "editorial": {
-      "family": {
-        "$type": "fontFamily",
-        "$value": "Helvetica Neue"
+    "typography": {
+      "heading": {"family": {"$type": "fontFamily", "$value": "Kanit Medium"}, "weight": 500},
+      "body": {"family": {"$type": "fontFamily", "$value": "Kanit Light"}, "weight": 300},
+      "alternative": {"family": {"$type": "fontFamily", "$value": "Aeonik"}, "$description": "Controlled alternative; use sparingly"},
+      "scale": {
+        "h1": {"desktop": "36px", "mobile": "30px"},
+        "h2": {"desktop": "30px", "mobile": "24px"},
+        "h3": {"desktop": "24px", "mobile": "20px"},
+        "h4": "20px", "h5": "18px", "h6": "16px",
+        "bodyLarge": "18px", "body": "16px", "bodySmall": "14px", "caption": "12px"
       }
     },
-    "fallback": {
-      "$type": "fontFamily",
-      "$value": "Arial",
-      "$description": "Theme fallback only; not a brand face"
+    "spacing": {"0.5": "2px", "1": "4px", "1.5": "6px", "2": "8px", "3": "12px", "3.5": "14px", "4": "16px", "5": "20px", "6": "24px", "8": "32px", "10": "40px", "12": "48px", "16": "64px", "20": "80px"},
+    "radius": {"label": "4px", "small": "6px", "control": "8px", "large": "10px", "card": "12px", "projectLogo": "16px", "pill": "9999px"},
+    "zIndex": {"base": 0, "raised": 10, "dropdown": 20, "sticky": 30, "fixed": 40, "navbar": 50, "overlay": 60, "modal": 70, "toast": 80, "tooltip": 90},
+    "responsive": {
+      "breakpoints": {"sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px", "2xl": "1536px"},
+      "containerMax": "1280px", "paddingDesktop": "24px", "paddingMobile": "16px", "touchTargetMin": "44px"
     },
-    "presentationObservedPt": {
-      "title": {
-        "$type": "dimension",
-        "$value": "24-32pt"
-      },
-      "moduleHeading": {
-        "$type": "dimension",
-        "$value": "13-18pt"
-      },
-      "body": {
-        "$type": "dimension",
-        "$value": "13-17pt"
-      },
-      "metric": {
-        "$type": "dimension",
-        "$value": "32-43pt"
-      },
-      "pageNumber": {
-        "$type": "dimension",
-        "$value": "6pt"
-      }
+    "motion": {
+      "fast": "150ms ease", "medium": "200ms ease", "slow": "300ms ease", "entrance": "400ms cubic-bezier(0.16, 1, 0.3, 1)",
+      "entranceOffset": "20px", "stagger": "80ms", "reducedMotion": "disable nonessential animation"
+    },
+    "focus": {"ring": "0 0 0 3px rgba(230, 33, 47, 0.1)"},
+    "shadow": {
+      "default": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
+      "cardBrand": "0 4px 24px 0 rgba(230, 33, 47, 0.15)"
     }
   },
-  "presentation": {
-    "aspectRatio": {
-      "$type": "string",
-      "$value": "16:9"
+  "profiles": {
+    "presentationCurrent": {
+      "scope": "Only inside the current inherited presentation master",
+      "source": "Team1 presentation master, 2026-08-03",
+      "aspectRatio": "16:9", "exemplarSlides": 40, "masters": 1, "packagedLayouts": 20,
+      "typography": ["Inter", "Inter SemiBold", "Inter ExtraBold", "Kanit Medium", "Helvetica Neue"],
+      "inheritedColors": ["#E84142", "#F5384B", "#161618", "#F5F5F9", "#3055B3", "#348BFF"],
+      "rule": "Preserve inherited styles; do not export these values as global identity tokens"
     },
-    "width": {
-      "$type": "dimension",
-      "$value": "10in"
-    },
-    "height": {
-      "$type": "dimension",
-      "$value": "5.625in"
-    },
-    "inspectionWidth": {
-      "$type": "dimension",
-      "$value": "960px"
-    },
-    "inspectionHeight": {
-      "$type": "dimension",
-      "$value": "540px"
-    },
-    "observedSideMargin": {
-      "$type": "dimension",
-      "$value": "42px",
-      "$description": "Approximate at the 960x540 inspection scale"
-    },
-    "observedTopMargin": {
-      "$type": "dimension",
-      "$value": "41px",
-      "$description": "Approximate at the 960x540 inspection scale"
-    }
+    "chapter": {"font": "Aeonik Black", "case": "ALL CAPS in the chapter construction only", "canvas": "3000x3000px", "typeSize": "344px", "spacing": "788.5px", "colorRule": "approved primary national flag colors"},
+    "video": {"captionFont": "Aeonik Medium", "captionSize": 57, "captionColor": "#FFFFFF", "shadow": "black 100%, 135deg, distance 3, blur 6, spread 12", "position": "bottom center, x 0, y -106"},
+    "blog": {"background": "#3055B3", "fontOptions": ["Neuropol X", "Inter"], "text": "#FFFFFF", "redUse": "logo, icons, callouts only"}
   },
-  "composition": {
-    "primaryEmphases": {
-      "$type": "number",
-      "$value": 1
-    },
-    "metricMaximumPerFrame": {
-      "$type": "number",
-      "$value": 3,
-      "$description": "Preferred proof hierarchy for a single metric story, not a universal hard limit"
-    },
-    "backgroundModePrimary": {
-      "$type": "string",
-      "$value": "dark-grid-framed"
-    },
-    "cornerTreatment": {
-      "$type": "string",
-      "$value": "fine-red-inset-frame-with-square-anchors"
-    },
-    "glowTreatment": {
-      "$type": "string",
-      "$value": "restrained-red-at-edges-and-corners"
-    }
+  "retired": {
+    "#FF394A": "Retired Team1 red; historical v1 content signal only",
+    "#E84142": "Not Team1 primary; Avalanche-origin or inherited presentation context only"
   }
 }

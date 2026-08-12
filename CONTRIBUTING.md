@@ -4,7 +4,7 @@ Thank you for helping Team1 make consistent, useful community materials. This re
 
 ## Before contributing
 
-- Read the package [`SKILL.md`](team1-design-system/SKILL.md), [brand system](team1-design-system/references/brand-system.md), [QA checklist](team1-design-system/references/qa-checklist.md), and [usage notice](team1-design-system/NOTICE.md).
+- Read the package [`SKILL.md`](team1-design-system/SKILL.md), [authority](team1-design-system/references/authority.md), [identity](team1-design-system/references/identity.md), [governance and QA](team1-design-system/references/governance-and-qa.md), and [usage notice](team1-design-system/NOTICE.md).
 - Search existing [issues](https://github.com/avalancheteam1/design-system/issues) before opening a new one.
 - Confirm you are authorized to submit any logo, photograph, template, copy, or third-party material included in the change.
 - Remove secrets, attendee lists, private contact details, unapproved links, tracking data, and unnecessary personal information.
@@ -61,7 +61,7 @@ python3 -m unittest discover -s tests -v
 
 Run the checksum updater only after the package change is complete. Never edit `checksums.sha256` manually.
 
-For visual changes, also follow the complete [delivery QA checklist](team1-design-system/references/qa-checklist.md). Attach a contact sheet or before/after render to the pull request when a template, layout, logo treatment, crop, typography rule, or color role changes. Source-file inspection alone is not visual QA.
+For visual changes, also follow the complete [governance and delivery QA](team1-design-system/references/governance-and-qa.md). Attach a contact sheet or before/after render to the pull request when a template, layout, logo treatment, crop, typography rule, or color role changes. Source-file inspection alone is not visual QA.
 
 ## Versioning and releases
 

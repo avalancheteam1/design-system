@@ -32,7 +32,7 @@ Before filing an installation issue:
 1. Confirm the installed directory is named `team1-design-system` and contains `SKILL.md` directly inside it.
 2. Confirm the entire folder—not only `SKILL.md`—was installed or uploaded.
 3. Start a fresh agent session so its skill list is reloaded.
-4. Run:
+4. From inside the installed `team1-design-system/` directory, run:
 
    ```sh
    python3 scripts/validate_package.py .
