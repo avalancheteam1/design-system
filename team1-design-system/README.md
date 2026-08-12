@@ -1,60 +1,68 @@
 # Team1 Design System Agent Skill
 
-This is the Team1 visual system packaged for humans and AI agents. One unchanged folder works as an Agent Skill in compatible tools and as a self-contained brand kit everywhere else.
+Version 2.0.0 is a portable Team1 brand and production system for humans and AI agents. It combines the current global identity, official logo families, current chapter vectors, a current presentation master, machine-readable tokens, medium-specific rules, and output QA.
 
 ## Quick start
 
-1. Download `team1-design-system-v1.0.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use the `team1-design-system/` folder in an authorized repository checkout.
-2. Unzip it and keep the whole `team1-design-system` folder together. Do not upload only `SKILL.md`; the assets, tokens, references, and templates are part of the system.
-3. Install or upload the folder using the [cross-harness guide](references/compatibility.md).
-4. Start a fresh agent session and say: **“Use the team1-design-system skill to create…”**
-5. Supply the real brief: audience, language, format, dimensions, deadline, approved copy, facts, links, partner marks, and photos.
-6. Ask for both the editable source and the final export, with a visual QA pass.
+1. Download `team1-design-system-v2.0.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use this folder from an authorized checkout.
+2. Keep the complete directory named `team1-design-system`; `SKILL.md`, assets, tokens, templates, and references work together.
+3. Follow the [cross-harness guide](references/compatibility.md), start a fresh session, and say: “Use the team1-design-system skill to create…”
+4. Supply audience, locale, dimensions, deadline, approved copy/facts, links, photos, partner files, editable format, and final export.
+5. Require rendered QA and a fact/source/rights ledger.
 
-If the tool has no skill feature, attach the complete folder or ZIP and instruct it to read `SKILL.md` first. That is the universal fallback.
+If the harness has no Skills feature, attach the complete folder or ZIP and ask it to read `SKILL.md` first.
 
-## What is included
+## Authority hierarchy
 
-- `SKILL.md` — the canonical workflow and guardrails.
-- `references/` — brand rules, layout selection, collateral guidance, QA, and current install notes.
-- `tokens/` — machine-readable design tokens plus CSS convenience variables.
-- `assets/` — authentic Team1/Avalanche marks, source backgrounds, chapter and metric specimens, graphics, and documentary photography.
-- `templates/Team1 Design System.pptx` — editable 16:9 presentation source with inherited Team1 layouts.
-- `templates/Team1 Design System.pdf` — read-only visual reference for agents without PowerPoint support.
-- `examples/` — ready-to-copy prompts and an event-deck frame-map example.
-- `scripts/validate_package.py` — offline package integrity and portability check.
-- `scripts/update_checksums.py` — maintainer utility for refreshing the package manifest after an approved change.
+1. A newer explicitly approved Team1 source, with its date and owner recorded.
+2. The 2026 global brand guide and current official Brand Assets source.
+3. The current medium-specific authority: for presentations, the August 2026 master; for photography, the July 2026 photography guide.
+4. Bundled current identity assets and global tokens.
+5. Written medium modules and approved examples.
+6. Clearly labeled derived production judgment.
 
-## Authority order
+Old decks, screenshots, archived folders, campaign files, regional examples, and Avalanche defaults are evidence—not automatic authority. See [authority and conflict resolution](references/authority.md).
 
-1. The current verified brief and any newer explicitly approved Team1 source.
-2. Authentic bundled assets and the presentation template.
-3. Machine-readable tokens.
-4. Written reference rules.
-5. Approved examples.
-6. Agent judgment, clearly labeled as derived.
+## Included
 
-Conflicts should be surfaced, not silently blended.
+- `SKILL.md` — compact agent workflow and hard rules.
+- `references/` — identity, web, presentation, social, event/print, regional, photo/video, copy, governance, provenance, and compatibility modules.
+- `tokens/` — global tokens plus explicitly scoped presentation, chapter, video, and blog profiles.
+- `assets/identity/` — current wordmark, symbol, square, PFP, and favicon families.
+- `assets/chapters/` — current verified chapter SVG module with provenance and usage gates.
+- `templates/Team1 Current Presentation Template.pptx` — editable current 40-exemplar master, sanitized to remove embedded font payloads.
+- `templates/Team1 Current Presentation Template.pdf` — read-only 40-page visual reference.
+- `previews/current-presentation-master-contact-sheet.png` — all 40 current exemplar slides for source-selection review.
+- `examples/` — prompts and production maps.
+- `scripts/` — offline validation and checksum maintenance.
 
-## Important boundaries
+See the [photography/video](references/photography-and-video.md), [voice/copy](references/voice-and-copy.md), and [governance/QA](references/governance-and-qa.md) modules directly when those parts of a brief are in scope.
 
-- The package does not grant trademark, photography, or redistribution rights; see `NOTICE.md`.
-- No font files are redistributed. Install Kanit and Inter for authoring new copy. Helvetica Neue requires a licensed local installation where used.
-- Source metrics and program labels are historical evidence, not automatically current claims.
-- The legacy QR asset from the source deck is excluded on purpose.
+## Deliberately excluded
 
-## Validate a copy
+No font binaries, participant/member photography, attendee data, recognition decks, live or archived QR payloads, partner logos, licensed music/SFX, raw video, stock libraries, campaign PSD/AI sources, legacy presentations with contextual media, private operational records, or archive/migration assets are redistributed. The system documents how to request and validate those materials safely.
 
-From inside this folder, run:
+## Validate
+
+From inside this folder:
 
 ```sh
 python3 scripts/validate_package.py .
 ```
 
-The validator requires only Python 3 and no network access.
+From the repository root:
 
-## Version
+```sh
+python3 team1-design-system/scripts/validate_package.py team1-design-system
+python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-Version 1.0.0, built from the Team1 Overview source deck whose SHA-256 is recorded in `references/source-provenance.md`.
+After an approved package edit, refresh checksums last:
 
-The repository is named [`avalancheteam1/design-system`](https://github.com/avalancheteam1/design-system), while the portable skill folder must remain named `team1-design-system` to match the Agent Skills specification.
+```sh
+python3 team1-design-system/scripts/update_checksums.py team1-design-system
+```
+
+## Rights
+
+This private package supports authorized Team1 work. It does not grant new trademark, copyright, publicity, photography, partner, font, or external redistribution rights. Read [NOTICE.md](NOTICE.md) and every asset status before publication.

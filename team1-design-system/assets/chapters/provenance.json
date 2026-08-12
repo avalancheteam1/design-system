@@ -1,0 +1,157 @@
+{
+  "schemaVersion": "1.0",
+  "generated": "2026-08-12",
+  "sourceCollection": "Team1 shared brand library / Marketing / Brand Assets / Chapter Branding",
+  "privacy": "Sanitized provenance: no Drive IDs, account identifiers, or personal data are included.",
+  "decision": {
+    "status": "optional-current-chapter-module",
+    "rationale": "These are the newest non-legacy chapter vectors found in the 2026-08-12 audit. They remain subordinate to the global Team1 identity and require current chapter-owner approval before publication.",
+    "svgSourcesIncluded": true,
+    "pngDerivativesIncluded": false,
+    "pngPolicy": "Generate PNG derivatives from the verified SVG source only after destination and owner QA."
+  },
+  "assets": [
+    {
+      "chapter": "Brasil",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1brasil.svg",
+      "sourceModified": "2026-08-06",
+      "path": "brasil/team1brasil.svg",
+      "sha256": "6ad00b7acc34f5663657a1ece0cbf130aa6d235ab04e35f629987db4c3143d2c"
+    },
+    {
+      "chapter": "India",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1india.svg",
+      "sourceModified": "2026-08-06",
+      "path": "india/team1india.svg",
+      "sha256": "05f28336ecb8186d242b80c57b29b52063bd95ebf0d325bb65d30731d9f764cd"
+    },
+    {
+      "chapter": "Korea",
+      "role": "background-with-logo",
+      "sourceTitle": "Korea BG with t1 logo.svg",
+      "sourceModified": "2026-08-07",
+      "path": "korea/background-with-logo.svg",
+      "sha256": "7b383d0b4fc05b8f5ce06790d4132f2f41e31e87918bfdf7d37b49ac2a66f0fe"
+    },
+    {
+      "chapter": "Korea",
+      "role": "background",
+      "sourceTitle": "Korea BG.svg",
+      "sourceModified": "2026-08-07",
+      "path": "korea/background.svg",
+      "sha256": "840d969c664f77f4bf1741fb43e12e766635c9493a373379e7607c715dd113e7"
+    },
+    {
+      "chapter": "Korea",
+      "role": "complete-lockup",
+      "sourceTitle": "Korea complete.svg",
+      "sourceModified": "2026-08-07",
+      "path": "korea/complete.svg",
+      "sha256": "6a85f13bdfa890aba1d022315528cc60cfefe486a503b2cd1a2301627cac6e2a"
+    },
+    {
+      "chapter": "Korea",
+      "role": "chapter-wordmark",
+      "sourceTitle": "team1 korea.svg",
+      "sourceModified": "2026-08-07",
+      "path": "korea/team1-korea.svg",
+      "sha256": "b4cf8975400d254628b30f6ce1d7bf69724fca2b9dd3a61a015182289be3d310"
+    },
+    {
+      "chapter": "Korea",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1korea.svg",
+      "sourceModified": "2026-08-06",
+      "path": "korea/team1korea-lockup.svg",
+      "sha256": "1908c7e19aae67b1cf6ef8ba94516191c691025decec05c4611ce90e7a285b5b"
+    },
+    {
+      "chapter": "LATAM",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1latam.svg",
+      "sourceModified": "2026-08-06",
+      "path": "latam/team1latam.svg",
+      "sha256": "f923223eec11043e08d0335f53d209df373f1e47e4b2c2e2ac680adcf842e64e"
+    },
+    {
+      "chapter": "Thailand",
+      "role": "background-with-logo",
+      "sourceTitle": "TH BG with T1 logo.svg",
+      "sourceModified": "2026-08-06",
+      "path": "thailand/background-with-logo.svg",
+      "sha256": "9c9151c369e6adace933dbc9a1d58fabec6e40b4d23e2768acd666ddf49cbb52"
+    },
+    {
+      "chapter": "Thailand",
+      "role": "background",
+      "sourceTitle": "TH BG.svg",
+      "sourceModified": "2026-08-06",
+      "path": "thailand/background.svg",
+      "sha256": "ebabd04e10288ce38a55e13360e425811f987f37d1fa738c75454719b79cb72e"
+    },
+    {
+      "chapter": "Thailand",
+      "role": "complete-lockup",
+      "sourceTitle": "Thailand Complete.svg",
+      "sourceModified": "2026-08-06",
+      "path": "thailand/complete.svg",
+      "sha256": "54ffaf2d42ae8134031a004e7323899114e5640f3f59e14c3c8028346f06e42e"
+    },
+    {
+      "chapter": "Thailand",
+      "role": "chapter-wordmark",
+      "sourceTitle": "team1 Thailand.svg",
+      "sourceModified": "2026-08-06",
+      "path": "thailand/team1-thailand.svg",
+      "sha256": "2e1cc485da737e1c1a0410b52e971a70254a1100b48d06d3d7a0c1340b508838"
+    },
+    {
+      "chapter": "Thailand",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1thailand.svg",
+      "sourceModified": "2026-08-06",
+      "path": "thailand/team1thailand-lockup.svg",
+      "sha256": "2ad919fd7e8b8c36bab438bc985b2f40aab084bb00e5e7ef639c4ee7a44157b1"
+    },
+    {
+      "chapter": "Türkiye",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1turkiye.svg",
+      "sourceModified": "2026-08-06",
+      "path": "turkiye/team1turkiye.svg",
+      "sha256": "04d372eea712aec4d8d0fe103d31efc81c74628b466b398d423be09019e3d56e"
+    },
+    {
+      "chapter": "USA",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1usa.svg",
+      "sourceModified": "2026-08-06",
+      "path": "usa/team1usa.svg",
+      "sha256": "f31c3ccaf431ba5fcaefb7ab3e12f94a047a78002655f1c8221440f45e922553"
+    },
+    {
+      "chapter": "Vietnam",
+      "role": "horizontal-lockup",
+      "sourceTitle": "team1vietnam.svg",
+      "sourceModified": "2026-08-06",
+      "path": "vietnam/team1vietnam.svg",
+      "sha256": "e3bb7d03fdbb085af0651b503ee54d89c4e60e02c42a93ea573b4039959712b8"
+    }
+  ],
+  "knownExclusions": [
+    {
+      "item": "Türkiye raster file labelled UAE",
+      "reason": "Folder and filename provenance conflict; excluded pending owner QA."
+    },
+    {
+      "item": "Brasil/Brazil raster derivatives",
+      "reason": "Naming is inconsistent; generate a derivative from the verified Brasil SVG after owner confirmation."
+    }
+  ],
+  "validation": {
+    "xmlParse": "passed-all-16",
+    "hashAlgorithm": "sha256"
+  }
+}

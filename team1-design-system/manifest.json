@@ -1,30 +1,40 @@
 {
-  "schemaVersion": "1",
+  "schemaVersion": "2",
   "id": "team1-design-system",
-  "version": "1.0.0",
+  "name": "Team1 Design System",
+  "version": "2.0.0",
   "released": "2026-08-12",
   "entrypoint": "SKILL.md",
   "format": "https://agentskills.io/specification",
   "portable": true,
-  "networkRequired": false,
   "notice": "NOTICE.md",
-  "source": {
-    "name": "Team1 Overview.pptx",
-    "sha256": "8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0"
+  "authoritySnapshot": {
+    "globalBrand": "2026-07-03",
+    "presentationMaster": "2026-08-03",
+    "driveAudit": "2026-08-12"
   },
+  "compatibility": ["Codex", "ChatGPT", "Claude Code", "OpenClaw", "Hermes Agent", "Agent Skills clients"],
   "capabilities": [
     "presentations",
+    "web-and-product",
     "event-collateral",
-    "social-graphics",
+    "regional-localization",
+    "social-and-editorial",
     "documents",
-    "web-visuals",
+    "print-and-merchandise",
+    "photography-and-video-guidance",
     "brand-review"
   ],
   "canonicalResources": {
+    "authority": "references/authority.md",
     "tokens": "tokens/design-tokens.json",
     "assetIndex": "assets/asset-index.json",
-    "editablePresentation": "templates/Team1 Design System.pptx",
-    "visualReference": "templates/Team1 Design System.pdf",
-    "qualityGate": "references/qa-checklist.md"
-  }
+    "editablePresentation": "templates/Team1 Current Presentation Template.pptx",
+    "visualReference": "templates/Team1 Current Presentation Template.pdf",
+    "qualityGate": "references/governance-and-qa.md"
+  },
+  "networkRequired": false,
+  "containsExecutableInstaller": false,
+  "containsFontBinaries": false,
+  "containsParticipantMedia": false
 }

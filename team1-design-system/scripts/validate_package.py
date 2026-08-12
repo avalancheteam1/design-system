@@ -5,6 +5,7 @@ import hashlib
 import json
 import re
 import sys
+import zipfile
 from pathlib import Path
 
 
@@ -16,7 +17,16 @@ REQUIRED_FILES = (
     "tokens/design-tokens.json",
     "assets/asset-index.json",
 )
-REQUIRED_COLORS = ("#000000", "#FFFFFF", "#FF394A", "#E84142", "#F5384B")
+REQUIRED_COLORS = (
+    "#000000",
+    "#FFFFFF",
+    "#E6212F",
+    "#3055B3",
+    "#058AFF",
+    "#161617",
+    "#F5F5F9",
+    "#dc2626",
+)
 TEXT_SUFFIXES = {".css", ".json", ".md", ".py", ".txt", ".yaml", ".yml"}
 NAME_PATTERN = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 MACOS_USER_ROOT = "/" + "Users" + "/"
@@ -24,6 +34,24 @@ WINDOWS_USER_ROOT = re.compile(r"[A-Za-z]:[\\\\/]" + "Users" + r"[\\\\/]")
 CHECKSUM_PATTERN = re.compile(r"^[0-9a-f]{64}$")
 IGNORED_FILE_NAMES = {"checksums.sha256", ".DS_Store"}
 IGNORED_DIRECTORY_NAMES = {".git", "__pycache__"}
+PPTX_ACTIVE_PART_MARKERS = (
+    "vbaProject.bin",
+    "activeX/",
+    "embeddings/",
+    "externalLinks/",
+)
+PDF_FONT_KEYS = {"/FontFile", "/FontFile2", "/FontFile3"}
+PDF_ACTIVE_KEYS = {
+    "/JavaScript",
+    "/JS",
+    "/OpenAction",
+    "/AA",
+    "/EmbeddedFile",
+    "/Launch",
+    "/URI",
+}
+PDF_STREAM_PATTERN = re.compile(rb"\bstream(?:\r\n|\n|\r)")
+PDF_DIRECT_LENGTH_PATTERN = re.compile(rb"/Length\s+([0-9]+)\b")
 
 
 def _frontmatter(skill_path):
@@ -120,7 +148,7 @@ def _verify_checksums(root, errors):
             continue
         target = (root / candidate).resolve()
         try:
-            target.relative_to(root)
+            target.relative_to(root.resolve())
         except ValueError:
             errors.append(f"checksum path is unsafe: {relative!r}")
             continue
@@ -134,6 +162,81 @@ def _verify_checksums(root, errors):
     present = {relative.as_posix() for relative in _portable_files(root)}
     for relative in sorted(present - indexed):
         errors.append(f"checksum manifest missing entry: {relative}")
+    for relative in sorted(indexed - present):
+        errors.append(f"checksum manifest has unexpected entry: {relative}")
+
+
+def _verify_templates(root, errors):
+    template_root = root / "templates"
+    if not template_root.is_dir():
+        return
+
+    for template in sorted(template_root.glob("*.pptx")):
+        relative = template.relative_to(root)
+        try:
+            with zipfile.ZipFile(template) as archive:
+                names = archive.namelist()
+                if any(name.startswith("ppt/fonts/") for name in names):
+                    errors.append(f"PPTX contains embedded font payload: {relative}")
+                for marker in PPTX_ACTIVE_PART_MARKERS:
+                    if any(marker in name for name in names):
+                        errors.append(
+                            f"PPTX contains active or embedded content ({marker}): {relative}"
+                        )
+                for name in names:
+                    if name.endswith(".rels") and b'TargetMode="External"' in archive.read(
+                        name
+                    ):
+                        errors.append(
+                            f"PPTX contains external relationship in {name}: {relative}"
+                        )
+        except (OSError, zipfile.BadZipFile) as exc:
+            errors.append(f"PPTX is not a valid package ({relative}): {exc}")
+
+    for template in sorted(template_root.glob("*.pdf")):
+        relative = template.relative_to(root)
+        try:
+            data = template.read_bytes()
+        except OSError as exc:
+            errors.append(f"PDF cannot be read ({relative}): {exc}")
+            continue
+        if not data.startswith(b"%PDF-"):
+            errors.append(f"PDF is not a valid PDF header: {relative}")
+            continue
+        structural_chunks = []
+        cursor = 0
+        inspectable = True
+        while True:
+            stream_match = PDF_STREAM_PATTERN.search(data, cursor)
+            if stream_match is None:
+                structural_chunks.append(data[cursor:])
+                break
+            structural_chunks.append(data[cursor : stream_match.end()])
+            dictionary_tail = data[max(cursor, stream_match.start() - 512) : stream_match.start()]
+            lengths = PDF_DIRECT_LENGTH_PATTERN.findall(dictionary_tail)
+            if not lengths:
+                errors.append(
+                    f"PDF stream length is not directly inspectable: {relative}"
+                )
+                inspectable = False
+                break
+            stream_end = stream_match.end() + int(lengths[-1])
+            suffix = data[stream_end : stream_end + 32]
+            end_match = re.match(rb"(?:\r\n|\n|\r)?endstream\b", suffix)
+            if end_match is None:
+                errors.append(f"PDF stream length is inconsistent: {relative}")
+                inspectable = False
+                break
+            cursor = stream_end + end_match.end()
+        if not inspectable:
+            continue
+        structural = b"\n".join(structural_chunks)
+        if b"/ObjStm" in structural:
+            errors.append(f"PDF contains unsupported compressed object stream: {relative}")
+        if any(key.encode("ascii") in structural for key in PDF_FONT_KEYS):
+            errors.append(f"PDF contains embedded font program: {relative}")
+        if any(key.encode("ascii") in structural for key in PDF_ACTIVE_KEYS):
+            errors.append(f"PDF contains active or external content: {relative}")
 
 
 def validate(root):
@@ -202,6 +305,7 @@ def validate(root):
                 errors.append("asset-index.json must contain an object")
             else:
                 assets = index.get("assets", [])
+                schema_version = str(index.get("schemaVersion", "1"))
                 if not isinstance(assets, list):
                     errors.append("asset-index.json assets must contain a list")
                     assets = []
@@ -216,15 +320,47 @@ def validate(root):
                         errors.append(f"indexed asset path is unsafe: {relative!r}")
                         continue
                     normalized = candidate.as_posix()
+                    if normalized in indexed_assets:
+                        errors.append(f"duplicate indexed asset: {normalized}")
+                        continue
                     indexed_assets.add(normalized)
+                    if schema_version == "2":
+                        required_metadata = (
+                            "category",
+                            "role",
+                            "status",
+                            "authority",
+                            "source",
+                            "sha256",
+                            "modifiable",
+                            "rights",
+                        )
+                        missing = [
+                            key
+                            for key in required_metadata
+                            if key not in item or item[key] in (None, "")
+                        ]
+                        if missing:
+                            errors.append(
+                                f"asset entry missing metadata for {relative}: {', '.join(missing)}"
+                            )
                     target = (root / candidate).resolve()
                     try:
-                        target.relative_to(root)
+                        target.relative_to(root.resolve())
                     except ValueError:
                         errors.append(f"indexed asset path is unsafe: {relative!r}")
                     else:
                         if not target.is_file():
                             errors.append(f"indexed asset is missing: {relative}")
+                        else:
+                            expected_hash = item.get("sha256")
+                            if expected_hash is not None:
+                                if not isinstance(expected_hash, str) or not CHECKSUM_PATTERN.fullmatch(
+                                    expected_hash
+                                ):
+                                    errors.append(f"indexed asset has invalid sha256: {relative}")
+                                elif _sha256_file(target) != expected_hash:
+                                    errors.append(f"indexed asset hash mismatch: {relative}")
 
                 asset_root = root / "assets"
                 actual_assets = {
@@ -248,6 +384,7 @@ def validate(root):
             relative = path.relative_to(root)
             errors.append(f"absolute maintainer path found in {relative}")
 
+    _verify_templates(root, errors)
     _verify_checksums(root, errors)
     return errors
 

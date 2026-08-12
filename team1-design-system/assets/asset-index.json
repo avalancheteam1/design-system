@@ -1,340 +1,662 @@
 {
-  "schemaVersion": "1",
-  "source": {
-    "name": "Team1 Overview.pptx",
-    "sha256": "8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0"
+  "schemaVersion": "2",
+  "generated": "2026-08-12",
+  "scope": "Privacy-safe current Team1 identity assets audited for the design-system v2 package",
+  "assetCounts": {
+    "indexedFiles": 55,
+    "visualFiles": 54,
+    "globalIdentityFiles": 38,
+    "chapterVectorFiles": 16,
+    "metadataFiles": 1
   },
-  "excluded": [
+  "authorities": [
     {
-      "sourceFile": "image42.png",
-      "reason": "Legacy QR destination and approval were not verified"
+      "priority": 1,
+      "scope": "global-identity",
+      "source": "avalancheteam1/common",
+      "commit": "9d1b3d1a9d9e3e254149885605504c6dfd84ec54",
+      "status": "source-of-truth-at-audit"
     },
     {
-      "sourceFile": "image13.png",
-      "reason": "Legacy poster contains a QR whose destination and approval were not verified"
+      "priority": 2,
+      "scope": "chapter-identity",
+      "source": "Team1 shared Drive chapter-brand audit",
+      "sourceModified": "2026-08-06/07",
+      "audited": "2026-08-12",
+      "status": "current-optional-owner-approval-required"
+    }
+  ],
+  "exclusions": [
+    {
+      "category": "fonts",
+      "reason": "Font binaries and commercial license files are not redistributed."
+    },
+    {
+      "category": "destinations",
+      "reason": "QR codes, tracking links, and destination-bearing artwork require live verification and are not packaged."
+    },
+    {
+      "category": "people-and-private-data",
+      "reason": "Participant photography and personal or account identifiers are excluded."
+    },
+    {
+      "category": "third-party-identity",
+      "reason": "Partner, sponsor, Avalanche, and other third-party marks require separate approval."
+    },
+    {
+      "category": "historical-and-time-sensitive",
+      "reason": "Legacy marks, old chapter tiles, baked metrics, campaign graphics, and historical presentation backgrounds remain only in controlled Git/release history."
+    },
+    {
+      "category": "production-media",
+      "reason": "Audio, video, and editable production sources are outside this distributable identity layer."
     }
   ],
   "assets": [
     {
-      "path": "assets/logos/team1-wordmark-white-red.png",
-      "sourceFile": "image8.png",
-      "category": "logo",
-      "role": "Primary Team1 wordmark for dark fields",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/brasil/team1brasil.svg",
+      "category": "chapter-identity",
+      "role": "Brasil: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Brasil source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "6ad00b7acc34f5663657a1ece0cbf130aa6d235ab04e35f629987db4c3143d2c",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/logos/team1-mark-white-red.png",
-      "sourceFile": "image2.png",
-      "category": "logo",
-      "role": "Compact Team1 footer and small-format mark",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/india/team1india.svg",
+      "category": "chapter-identity",
+      "role": "India: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; India source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "05f28336ecb8186d242b80c57b29b52063bd95ebf0d325bb65d30731d9f764cd",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/logos/avalanche-wordmark-white.png",
-      "sourceFile": "image1.png",
-      "category": "logo",
-      "role": "Avalanche endorsement for dark fields",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/korea/background-with-logo.svg",
+      "category": "chapter-background",
+      "role": "Korea: Approved chapter background with Team1 lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Korea source modified 2026-08-07; audited 2026-08-12",
+      "sha256": "7b383d0b4fc05b8f5ce06790d4132f2f41e31e87918bfdf7d37b49ac2a66f0fe",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/logos/avalanche-wordmark-red.png",
-      "sourceFile": "image4.png",
-      "category": "logo",
-      "role": "Avalanche endorsement for light fields",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/korea/background.svg",
+      "category": "chapter-background",
+      "role": "Korea: Approved chapter background",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Korea source modified 2026-08-07; audited 2026-08-12",
+      "sha256": "840d969c664f77f4bf1741fb43e12e766635c9493a373379e7607c715dd113e7",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/logos/ambassador-dao-red-white.png",
-      "sourceFile": "image10.png",
-      "category": "legacy-logo",
-      "role": "Historical Ambassador DAO reference",
-      "status": "legacy-reference-only",
-      "modifiable": false
+      "path": "assets/chapters/korea/complete.svg",
+      "category": "chapter-identity",
+      "role": "Korea: Complete chapter identity composition",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Korea source modified 2026-08-07; audited 2026-08-12",
+      "sha256": "6a85f13bdfa890aba1d022315528cc60cfefe486a503b2cd1a2301627cac6e2a",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/logos/avalanche-colombia-white.png",
-      "sourceFile": "image15.png",
-      "category": "regional-logo",
-      "role": "Avalanche Colombia source mark",
-      "status": "verify-current-approval",
-      "modifiable": false
+      "path": "assets/chapters/korea/team1-korea.svg",
+      "category": "chapter-identity",
+      "role": "Korea: Chapter wordmark",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Korea source modified 2026-08-07; audited 2026-08-12",
+      "sha256": "b4cf8975400d254628b30f6ce1d7bf69724fca2b9dd3a61a015182289be3d310",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/backgrounds/team1-grid-unframed-dark.png",
-      "sourceFile": "image6.png",
-      "category": "background",
-      "role": "Dark cover, bumper, and photo-mosaic canvas",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/korea/team1korea-lockup.svg",
+      "category": "chapter-identity",
+      "role": "Korea: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Korea source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "1908c7e19aae67b1cf6ef8ba94516191c691025decec05c4611ce90e7a285b5b",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/backgrounds/team1-grid-framed-dark.png",
-      "sourceFile": "image7.png",
-      "category": "background",
-      "role": "Primary dark content canvas with frame and corner anchors",
-      "status": "core-authentic",
-      "modifiable": false
+      "path": "assets/chapters/latam/team1latam.svg",
+      "category": "chapter-identity",
+      "role": "LATAM: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; LATAM source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "f923223eec11043e08d0335f53d209df373f1e47e4b2c2e2ac680adcf842e64e",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/backgrounds/team1-grid-framed-light.png",
-      "sourceFile": "image9.png",
-      "category": "background",
-      "role": "Supported light framed canvas; not demonstrated in visible source slides",
-      "status": "source-supported-secondary",
-      "modifiable": false
+      "path": "assets/chapters/provenance.json",
+      "category": "metadata",
+      "role": "Sanitized provenance and QA record for the packaged chapter vectors",
+      "status": "current-package-metadata",
+      "authority": "package-maintained-audit-record",
+      "source": "Team1 shared Drive brand audit completed 2026-08-12; source assets modified 2026-08-06/07",
+      "sha256": "d5d7508026c0550312ae9b36a7a9bf60643eb595065dfcc8b4aa0742fe2bb474",
+      "modifiable": false,
+      "rights": "Package metadata; keep it with the chapter asset module."
     },
     {
-      "path": "assets/backgrounds/team1-grid-unframed-light.png",
-      "sourceFile": "image11.png",
-      "category": "background",
-      "role": "Supported light unframed canvas; not demonstrated in visible source slides",
-      "status": "source-supported-secondary",
-      "modifiable": false
+      "path": "assets/chapters/thailand/background-with-logo.svg",
+      "category": "chapter-background",
+      "role": "Thailand: Approved chapter background with Team1 lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Thailand source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "9c9151c369e6adace933dbc9a1d58fabec6e40b4d23e2768acd666ddf49cbb52",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-usa.png",
-      "sourceFile": "image12.png",
-      "category": "chapter-tile",
-      "role": "USA source chapter tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/thailand/background.svg",
+      "category": "chapter-background",
+      "role": "Thailand: Approved chapter background",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Thailand source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "ebabd04e10288ce38a55e13360e425811f987f37d1fa738c75454719b79cb72e",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-turkiye.png",
-      "sourceFile": "image17.png",
-      "category": "chapter-tile",
-      "role": "Türkiye source chapter tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/thailand/complete.svg",
+      "category": "chapter-identity",
+      "role": "Thailand: Complete chapter identity composition",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Thailand source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "54ffaf2d42ae8134031a004e7323899114e5640f3f59e14c3c8028346f06e42e",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-latam.png",
-      "sourceFile": "image22.png",
-      "category": "chapter-tile",
-      "role": "LATAM source regional tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/thailand/team1-thailand.svg",
+      "category": "chapter-identity",
+      "role": "Thailand: Chapter wordmark",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Thailand source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "2e1cc485da737e1c1a0410b52e971a70254a1100b48d06d3d7a0c1340b508838",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-india.png",
-      "sourceFile": "image27.png",
-      "category": "chapter-tile",
-      "role": "India source chapter tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/thailand/team1thailand-lockup.svg",
+      "category": "chapter-identity",
+      "role": "Thailand: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Thailand source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "2ad919fd7e8b8c36bab438bc985b2f40aab084bb00e5e7ef639c4ee7a44157b1",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-vietnam.png",
-      "sourceFile": "image34.png",
-      "category": "chapter-tile",
-      "role": "Vietnam source chapter tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/turkiye/team1turkiye.svg",
+      "category": "chapter-identity",
+      "role": "Türkiye: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Türkiye source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "04d372eea712aec4d8d0fe103d31efc81c74628b466b398d423be09019e3d56e",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/chapters/team1-brasil.png",
-      "sourceFile": "image37.png",
-      "category": "chapter-tile",
-      "role": "Brasil source chapter tile",
-      "status": "verify-current-label-and-approval",
-      "modifiable": false
+      "path": "assets/chapters/usa/team1usa.svg",
+      "category": "chapter-identity",
+      "role": "USA: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; USA source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "f31c3ccaf431ba5fcaefb7ab3e12f94a047a78002655f1c8221440f45e922553",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/icons/metric-universities.png",
-      "sourceFile": "image24.png",
-      "category": "metric-tile",
-      "role": "Universities metric specimen",
-      "status": "verify-baked-claim-before-use",
-      "modifiable": false
+      "path": "assets/chapters/vietnam/team1vietnam.svg",
+      "category": "chapter-identity",
+      "role": "Vietnam: Horizontal chapter lockup",
+      "status": "current-optional-verify-owner-approval",
+      "authority": "current-shared-drive-brand-audit",
+      "source": "Team1 shared Drive chapter-brand audit; Vietnam source modified 2026-08-06; audited 2026-08-12",
+      "sha256": "e3bb7d03fdbb085af0651b503ee54d89c4e60e02c42a93ea573b4039959712b8",
+      "modifiable": false,
+      "rights": "Authorized Team1 chapter use only; current chapter-owner approval is required before public use."
     },
     {
-      "path": "assets/icons/metric-luma-subscribers.png",
-      "sourceFile": "image25.png",
-      "category": "metric-tile",
-      "role": "Luma subscribers metric specimen",
-      "status": "verify-baked-claim-before-use",
-      "modifiable": false
+      "path": "assets/identity/Team1_Main_Red_PFP.png",
+      "category": "profile-art",
+      "role": "Official Team1 red profile-picture artwork",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/Team1_Main_Red_PFP.png",
+      "sha256": "ea3dff5091f87f60c069cb200c5da83de4cf2312353b55979ca9847e2c4fa775",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/icons/metric-jobs.png",
-      "sourceFile": "image28.png",
-      "category": "metric-tile",
-      "role": "Jobs metric specimen",
-      "status": "verify-baked-claim-before-use",
-      "modifiable": false
+      "path": "assets/identity/favicon/apple-icon.png",
+      "category": "favicon",
+      "role": "Apple touch icon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/apple-icon.png",
+      "sha256": "d6eb486d69ee809daccbfa67311bb7ac02ee7eb4aa52195a606db714ae1d0589",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/icons/metric-countries.png",
-      "sourceFile": "image29.png",
-      "category": "metric-tile",
-      "role": "Countries metric specimen",
-      "status": "verify-baked-claim-before-use",
-      "modifiable": false
+      "path": "assets/identity/favicon/favicon.ico",
+      "category": "favicon",
+      "role": "Browser favicon bundle",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/favicon.ico",
+      "sha256": "70cf61b9ba65a34754c7cc2a787cdd05455774c833876be418630b025b15441e",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/icons/metric-grants.png",
-      "sourceFile": "image30.png",
-      "category": "metric-tile",
-      "role": "Grants icon specimen",
-      "status": "verify-program-status-before-use",
-      "modifiable": false
+      "path": "assets/identity/favicon/icon-192.png",
+      "category": "favicon",
+      "role": "192-pixel web application icon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/icon-192.png",
+      "sha256": "6d6eb85353d7bb187f508a661c0e7af59db004205f40224d640e8b462bbdd5bc",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/icons/metric-members.png",
-      "sourceFile": "image31.png",
-      "category": "metric-tile",
-      "role": "Members metric specimen",
-      "status": "verify-baked-claim-before-use",
-      "modifiable": false
+      "path": "assets/identity/favicon/icon-512.png",
+      "category": "favicon",
+      "role": "512-pixel web application icon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/icon-512.png",
+      "sha256": "2c6f11df751b5074df4edd070cb19599230d494ca4be5f04d379709ff8c7dd08",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/graphics/team1-red-wireframe-device.png",
-      "sourceFile": "image35.png",
-      "category": "graphic-device",
-      "role": "Red wireframe Avalanche/Team1 visual",
-      "status": "source-authentic",
-      "modifiable": false
+      "path": "assets/identity/favicon/icon-maskable.png",
+      "category": "favicon",
+      "role": "Maskable web application icon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/icon-maskable.png",
+      "sha256": "dd47dedec9016da36bfa3dd69fd681d851a1cbedb08149a7b1fe46345eaad21e",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/graphics/partner-ecosystem-mosaic.png",
-      "sourceFile": "image40.png",
-      "category": "partner-graphic",
-      "role": "Source partner ecosystem mosaic",
-      "status": "verify-every-partner-before-use",
-      "modifiable": false
+      "path": "assets/identity/favicon/icon.png",
+      "category": "favicon",
+      "role": "Default Team1 web icon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/icon.png",
+      "sha256": "1fe51788ed11317dd7cc41557dac3474b1b21ad3eeae51494dc297e7de185483",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/graphics/team1-community-mosaic-mark.png",
-      "sourceFile": "image41.png",
-      "category": "expressive-graphic",
-      "role": "Community-mosaic Team1 hero mark",
-      "status": "source-authentic-not-primary-logo",
-      "modifiable": false
+      "path": "assets/identity/favicon/originals/favicon.svg",
+      "category": "favicon",
+      "role": "Source vector favicon",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/favicon/originals/favicon.svg",
+      "sha256": "9c4d945e941dfcc17af850f64ad84198885a0930924d0bf0cb41b25098ed2999",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/graphics/avalanche-community-mosaic-mark.png",
-      "sourceFile": "image44.png",
-      "category": "expressive-graphic",
-      "role": "Community-mosaic Avalanche hero mark",
-      "status": "source-authentic-not-primary-logo",
-      "modifiable": false
+      "path": "assets/identity/symbol/Team1_Symbol_AvaRed.svg",
+      "category": "global-symbol",
+      "role": "all-Ava-Red Team1 symbol for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/Team1_Symbol_AvaRed.svg",
+      "sha256": "325a5efe9f7f6265b7c7d3858991bbeca42c56d53c9631074f5cb000a787ab57",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/graphics/team1-red-cinematic-hero.png",
-      "sourceFile": "image46.png",
-      "category": "hero-graphic",
-      "role": "Cinematic Team1 closing or CTA visual",
-      "status": "source-authentic",
-      "modifiable": false
+      "path": "assets/identity/symbol/Team1_Symbol_BLACK_ALTERNATIVE.png",
+      "category": "global-symbol",
+      "role": "all-black Team1 symbol for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/Team1_Symbol_BLACK_ALTERNATIVE.png",
+      "sha256": "9fbac5e2372aae43aab03596172aef0f8d4de6e39e9c80294681d7356ab7fb90",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/community-transit.jpg",
-      "sourceFile": "image14.jpg",
-      "category": "photography",
-      "role": "Community in transit",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_Black.svg",
+      "category": "global-symbol",
+      "role": "all-black Team1 symbol for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/Team1_Symbol_Black.svg",
+      "sha256": "8974a6eb772836e77f7c67a7d367789076d03ebd1713bfa5c351f78f5011ef11",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/avalanche-colombia-group.jpg",
-      "sourceFile": "image16.jpg",
-      "category": "photography",
-      "role": "Avalanche Colombia group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_Black_AvaRed.svg",
+      "category": "global-symbol",
+      "role": "black-and-Ava-Red Team1 symbol variant",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/Team1_Symbol_Black_AvaRed.svg",
+      "sha256": "ea8804591b30ebdc84a8c9509a5968689761fe888c819ae99aea823173dd7e89",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/hackathon-builders.png",
-      "sourceFile": "image18.png",
-      "category": "photography",
-      "role": "Hackathon builders in action",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_MAIN_BLACK.png",
+      "category": "global-symbol",
+      "role": "Main Team1 symbol for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/Team1_Symbol_MAIN_BLACK.png",
+      "sha256": "d567d89f0e7a8919e313d495279d6ff0f7b3a569511fe6bac0b02a4454d4dc2f",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/community-event-group.png",
-      "sourceFile": "image19.png",
-      "category": "photography",
-      "role": "Community event group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_MAIN_WHITE.png",
+      "category": "global-symbol",
+      "role": "Main Team1 symbol for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/Team1_Symbol_MAIN_WHITE.png",
+      "sha256": "ac4d158277466472931dd90c2cccf6b2d65b256e631bc03ce63690aa8c832a25",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/community-conference-group.png",
-      "sourceFile": "image20.png",
-      "category": "photography",
-      "role": "Conference community group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_Main.svg",
+      "category": "global-symbol",
+      "role": "primary Team1 symbol",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/Team1_Symbol_Main.svg",
+      "sha256": "46305efcaac6aafc84ca66368791eec2b99f9e6eb796d981b1cc6c0dc300e186",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/workshop-classroom.jpg",
-      "sourceFile": "image21.jpg",
-      "category": "photography",
-      "role": "Workshop/classroom participation",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_RED_ALTERNATIVE.png",
+      "category": "global-symbol",
+      "role": "all-Ava-Red Team1 symbol for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/Team1_Symbol_RED_ALTERNATIVE.png",
+      "sha256": "1de2afdf69443403b71c7188f90327bfc2c78ef6f2af85eb8c5c732b233f4c65",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/community-banner-group.png",
-      "sourceFile": "image23.png",
-      "category": "photography",
-      "role": "Community group with banner",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_WHITE_ALTERNATIVE.png",
+      "category": "global-symbol",
+      "role": "all-white Team1 symbol for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/Team1_Symbol_WHITE_ALTERNATIVE.png",
+      "sha256": "0e7179b72402903cefb696fd78f945b674eebc59d5be621a502ab05643c486d6",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/outdoor-community-group.png",
-      "sourceFile": "image26.png",
-      "category": "photography",
-      "role": "Outdoor community group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/Team1_Symbol_White.svg",
+      "category": "global-symbol",
+      "role": "all-white Team1 symbol for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/Team1_Symbol_White.svg",
+      "sha256": "b50e95e7877ef11e1c029c2076ec4863e3473b6fd6c04ce2ccb7874552b7babe",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/large-community-group.png",
-      "sourceFile": "image32.png",
-      "category": "photography",
-      "role": "Large community group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_AvaRed.png",
+      "category": "global-symbol-square",
+      "role": "Square all-Ava-Red Team1 symbol for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/squared/Team1_Symbol_AvaRed.png",
+      "sha256": "7b72183d0a1916022826536ce4599c3cd2329014def165c370dd0adcd948ce60",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/brand-activation.jpg",
-      "sourceFile": "image33.jpg",
-      "category": "photography",
-      "role": "Live brand activation",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_AvaRed.svg",
+      "category": "global-symbol-square",
+      "role": "Square all-Ava-Red Team1 symbol for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/squared/Team1_Symbol_AvaRed.svg",
+      "sha256": "55d059830ffa3acf9bdfc7859b354876c6a001e0d492d2a1a482ea5c34f58ced",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/venue-community-group.png",
-      "sourceFile": "image36.png",
-      "category": "photography",
-      "role": "Large venue community group",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Black.png",
+      "category": "global-symbol-square",
+      "role": "Square all-black Team1 symbol for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/squared/Team1_Symbol_Black.png",
+      "sha256": "bf217ee6f98f1d30af19c4e9da62ddf302186348f841bfa59fbc59fa095cc212",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/branded-collateral.png",
-      "sourceFile": "image39.png",
-      "category": "photography",
-      "role": "Branded physical collateral detail",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Black.svg",
+      "category": "global-symbol-square",
+      "role": "Square all-black Team1 symbol for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/squared/Team1_Symbol_Black.svg",
+      "sha256": "3c0b1bc46efdd3d77a7e2aadb4fda94580be10523fdcf742631ca13a67b0e40c",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/community-talk.png",
-      "sourceFile": "image43.png",
-      "category": "photography",
-      "role": "Community talk in progress",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Black_AvaRed.png",
+      "category": "global-symbol-square",
+      "role": "Square black-and-Ava-Red Team1 symbol variant",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/squared/Team1_Symbol_Black_AvaRed.png",
+      "sha256": "d0ff3cf375850f3959cc32b865ec70c0117db26e687ea0cf8968c7a726c610f0",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/women-community-event.png",
-      "sourceFile": "image45.png",
-      "category": "photography",
-      "role": "Women community event",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Black_AvaRed.svg",
+      "category": "global-symbol-square",
+      "role": "Square black-and-Ava-Red Team1 symbol variant",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/squared/Team1_Symbol_Black_AvaRed.svg",
+      "sha256": "50beeb2a06a40fd8a0d1e72381b57cfe9bb9a8decb69dabcf9f188f9f112de70",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     },
     {
-      "path": "assets/photography/living-room-community.png",
-      "sourceFile": "image47.png",
-      "category": "photography",
-      "role": "Informal living-room community gathering",
-      "status": "source-photo-verify-reuse-context"
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Main.png",
+      "category": "global-symbol-square",
+      "role": "Square primary Team1 symbol",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/squared/Team1_Symbol_Main.png",
+      "sha256": "46dc6b107b1c899175f524d5b017e794d51e7637245f2e2908002ee4b36297b0",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/symbol/squared/Team1_Symbol_Main.svg",
+      "category": "global-symbol-square",
+      "role": "Square primary Team1 symbol",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/squared/Team1_Symbol_Main.svg",
+      "sha256": "78e5c02407e83b35aaf18dc4a26b69222eb2e290e35255a0478bb6cceb487bd5",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/symbol/squared/Team1_Symbol_White.png",
+      "category": "global-symbol-square",
+      "role": "Square all-white Team1 symbol for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/PNG/squared/Team1_Symbol_White.png",
+      "sha256": "143f96fc1ae15ecf3ef512e392f79f6b1133b568570070f94901270e38e7e009",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/symbol/squared/Team1_Symbol_White.svg",
+      "category": "global-symbol-square",
+      "role": "Square all-white Team1 symbol for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/symbol/SVG/squared/Team1_Symbol_White.svg",
+      "sha256": "6e4acf4d0400a045ddad0e6556bd759a205bcda22abcafc177b1cdd1da7930d1",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_BLACK_ALTERNATIVE.png",
+      "category": "global-wordmark",
+      "role": "All-black Team1 wordmark for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/PNG/Team1_BLACK_ALTERNATIVE.png",
+      "sha256": "87202c4a08949e0a4d9dcb755f96f89e138ebada812427a38c641eeec71fa678",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_BLACK_ALTERNATIVE.svg",
+      "category": "global-wordmark",
+      "role": "All-black Team1 wordmark for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/SVG/Team1_BLACK_ALTERNATIVE.svg",
+      "sha256": "12937906e774bfb774371d497aeeadc9bd597b156d56c37816f42ee3ff87908f",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_BLACK_MAIN.svg",
+      "category": "global-wordmark",
+      "role": "Red-symbol and black-lettering Team1 wordmark for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/SVG/Team1_BLACK_MAIN.svg",
+      "sha256": "cf79626bcb49c217f8efd3fd7aaabeb328ec83affe561bc120c9140dbd0856c1",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_MAIN_BLACK.png",
+      "category": "global-wordmark",
+      "role": "Red-symbol and black-lettering Team1 wordmark for light fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/PNG/Team1_MAIN_BLACK.png",
+      "sha256": "326898ede08d425de07d5cfe6b6a43c18e171db9d7b0bbce7af68825c6c0f0b3",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_MAIN_WHITE.png",
+      "category": "global-wordmark",
+      "role": "Red-symbol and white-lettering Team1 wordmark for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/PNG/Team1_MAIN_WHITE.png",
+      "sha256": "7304f297f1e1cba3c284949c1b0f8dbec40c8a1c438b576db50b98ecbf276c01",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_MAIN_WHITE.svg",
+      "category": "global-wordmark",
+      "role": "Red-symbol and white-lettering Team1 wordmark for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/SVG/Team1_MAIN_WHITE.svg",
+      "sha256": "bedd2a604faeb5250eb7420446f65825d3c2b7c993fc5f4d13c0c5ac7e524f1f",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_RED_ALTERNATIVE.png",
+      "category": "global-wordmark",
+      "role": "All-red Team1 wordmark for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/PNG/Team1_RED_ALTERNATIVE.png",
+      "sha256": "47c5c9e60469579d3db8b2e2529deac5e602bbb9c8e0dd6e3cab8aacbaec7688",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_RED_ALTERNATIVE.svg",
+      "category": "global-wordmark",
+      "role": "All-red Team1 wordmark for controlled one-colour use",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/SVG/Team1_RED_ALTERNATIVE.svg",
+      "sha256": "698c8f2be6a9e609e54cba08b81ca40a0fa53e914b87e3958c09e2dd4779bbfb",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_WHITE_ALTERNATIVE.png",
+      "category": "global-wordmark",
+      "role": "All-white Team1 wordmark for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/PNG/Team1_WHITE_ALTERNATIVE.png",
+      "sha256": "b7f211201c4051dc6ec48d1df28cdc7f4cf678e6523ff0bb93575a9325fde392",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
+    },
+    {
+      "path": "assets/identity/wordmark/Team1_WHITE_ALTERNATIVE.svg",
+      "category": "global-wordmark",
+      "role": "All-white Team1 wordmark for dark fields",
+      "status": "current-global-core",
+      "authority": "common-brand-source-of-truth",
+      "source": "avalancheteam1/common@9d1b3d1a9d9e3e254149885605504c6dfd84ec54:brand/assets/text/SVG/Team1_WHITE_ALTERNATIVE.svg",
+      "sha256": "aea564c38706742b739cd2907edc5342a37ceb85d73c6eb76c6eac258ea88bda",
+      "modifiable": false,
+      "rights": "Authorized Team1 use only; no independent redistribution, sublicensing, or trademark rights are granted."
     }
   ]
 }

@@ -1,24 +1,26 @@
-# Team1 Design System 1.0.0
+# Team1 Design System 2.0.0
 
-The first private Team1 community release packages the visual system as one portable Agent Skill for humans and AI agents.
+This major private release rebases the portable Team1 Agent Skill on the current 2026 global brand authority and the shared Drive’s current medium masters.
 
-## Included
+## What changed
 
-- Authentic Team1 and source-approved Avalanche assets with a machine-readable asset index.
-- Design tokens for color, typography, spacing, imagery, and presentation roles.
-- An editable 13-slide PowerPoint design-system template and a pixel-faithful PDF reference.
-- Brand, layout, collateral, QA, source-provenance, and cross-harness installation guides.
-- Ready-to-use prompts for Codex, ChatGPT, Claude Code, OpenClaw, Hermes, and generic agent harnesses.
-- Offline package validation, checksum generation, repository tests, and GitHub Actions validation.
+- Current Ava Red `#E6212F`, Kanit Medium/Light, naming, official identity/favicons, light/dark surfaces, semantic states, spacing, responsive, focus, and motion foundations.
+- Explicit presentation, chapter, video, blog, photography, event, print, merchandise, regional, localization, social, and web profiles without promoting medium exceptions to global rules.
+- The August 3 current presentation master: 40 exemplars, one master, 20 packaged inherited layout parts, dark/light families, and a font-clean editable PPTX plus PDF reference.
+- Current verified chapter SVG module with provenance and integrity hashes.
+- Complete authority/conflict, rights/privacy, QR, co-branding, accessibility, governance, and final-output QA workflows.
+- A sanitized audit of 2,012 scoped observations across the shared Drive, with shortcut/duplicate caveats and no member data.
 
-## Safety and usage
+## Removed from the current reusable payload
 
-The editable template contains no bundled font binaries, macros, objects, or external relationships. Install Kanit and Inter locally when authoring new copy; Helvetica Neue requires a licensed local installation where used.
+Historical photos, claim-bearing metric tiles, superseded chapter marks, stale identity variants, partner/campaign graphics, archived QRs, fonts without redistribution evidence, the 13-slide legacy presentation, and other personal or rights-unclear media are not shipped in v2. The private v1 release remains available through controlled repository history when a documented maintenance task requires it.
 
-This private release supports authorized Team1 work. It does not grant new trademark, photography, partner-asset, font, or external redistribution rights. Verify time-sensitive facts, links, QR destinations, chapter status, metrics, and partner relationships before publication.
+## Safety and verification
 
-## Install
+The current editable template contains no redistributed embedded font payloads, macros, ActiveX, embedded objects, or external relationships. Its sanitized render was compared against the downloaded source export before packaging. The included 40-page visual-reference PDF is image-only and contains no font programs.
 
-Download `team1-design-system-v1.0.0.zip`, unzip it, and keep the complete top-level `team1-design-system/` directory together. Then follow `references/compatibility.md` inside the package.
+The clean-room agent regression suite improved from 27/60 without a skill and 33/60 with v1 to 59/60 with v2: all three scenarios passed and no hard fail remained. The method, frozen-response hashes, and strict result are recorded in `docs/EVALUATION_2026-08-12.md`. Package publication additionally requires the offline validator, repository tests, a full 40-slide render/contact-sheet review, overflow testing, and an extracted-release revalidation.
 
-The accompanying `.sha256` file lets you verify the downloaded archive before installation.
+Download `team1-design-system-v2.0.0.zip`, verify its accompanying SHA-256 file, and keep the complete top-level `team1-design-system/` directory together. Then follow `references/compatibility.md` inside the package.
+
+This private release supports authorized Team1 work. It does not grant new trademark, photography, partner, font, or external redistribution rights.

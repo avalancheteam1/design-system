@@ -6,7 +6,7 @@ The package follows the open [Agent Skills specification](https://agentskills.io
 
 ## Get the canonical package
 
-For Team1 members with access, download `team1-design-system-v1.0.0.zip` from the [latest private GitHub release](https://github.com/avalancheteam1/design-system/releases/latest). The release archive contains one correctly named top-level `team1-design-system/` directory.
+For Team1 members with access, download `team1-design-system-v2.0.0.zip` from the [latest private GitHub release](https://github.com/avalancheteam1/design-system/releases/latest). The release archive contains one correctly named top-level `team1-design-system/` directory.
 
 If you clone the repository instead, use the nested skill folder rather than the repository root:
 
@@ -79,12 +79,12 @@ Point the client’s documented skill root or loader at the unpacked folder. A c
 
 1. Confirm `team1-design-system` appears in the tool’s skill list or can be invoked explicitly.
 2. Start a fresh session.
-3. Ask: “Use the Team1 design system to outline a three-slide local meetup deck and name the exact bundled frame and assets for each slide.”
-4. A valid response should reference the bundled template, authentic asset paths, the two typography modes, the three red roles, and the final QA checklist.
-5. If it only produces generic black/red styling, the skill or its supporting folder was not loaded.
+3. Ask: “Use the Team1 design system to outline a three-slide local meetup deck. Name the authoritative template, identity assets, color rule, QR gate, and final checks.”
+4. A valid response should identify the August 3, 2026 presentation master, global Ava Red `#E6212F`, approved indexed marks, the inherited-presentation exception, and the governance/QA gate.
+5. A response that treats `#FF394A` or `#E84142` as the current global Team1 red, writes `TEAM1`, invents a QR destination, or produces only generic black/red styling did not load or correctly apply v2.
 
 ## Security and update model
 
-Review the folder before installation. This release has no network requirement, secret, hook, plugin, MCP server, or automatic installer. Its only executable is an optional standard-library validator. Update by replacing the entire versioned folder, not by merging vendor-specific forks.
+Review the folder before installation. This release has no network requirement, secret, hook, plugin, MCP server, or automatic installer. Its only executable is an optional standard-library validator. Identity assets remain subject to Team1 authorization, and font binaries and restricted source media are intentionally excluded. Update by replacing the entire versioned folder, not by merging vendor-specific forks.
 
 To update, download the newest private release, validate it, and replace the old complete folder. If discovery fails, confirm that the installed folder is exactly `team1-design-system`, that `SKILL.md` sits directly inside it, and that the complete `assets/`, `references/`, `tokens/`, and `templates/` directories came with it.
