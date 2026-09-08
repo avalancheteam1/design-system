@@ -3,7 +3,7 @@ name: team1-design-system
 description: Use when creating, revising, reviewing, or specifying Team1-branded presentations, websites, social content, event materials, regional collateral, photography, video, documents, print, merchandise, or partner-facing work.
 license: See NOTICE.md
 metadata:
-  version: "2.0.0"
+  version: "2.1.0"
   authority-snapshot: "2026-08-12"
 ---
 
@@ -23,7 +23,7 @@ The global brand red is `#E6212F`. `#FF394A` is retired. `#E84142` is Avalanche-
    - websites and product UI: `references/digital-and-web.md`
    - presentations: `references/presentations.md`
    - social/editorial: `references/social-and-content.md`
-   - events, QR, print, merchandise: `references/events-print-and-merch.md`
+   - events, QR, print, merchandise: `references/events-print-and-merch.md`; for campaign composition also `references/merch-campaigns.md`
    - chapters/localization: `references/regional-and-localization.md`
    - photography/video: `references/photography-and-video.md`
    - language: `references/voice-and-copy.md`

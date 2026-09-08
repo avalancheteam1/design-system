@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.1.0 — 2026-09-08
+
+- Added derived merchandise campaign guidance from the owner-approved ETHRome sticker set and Blockchain Beach production designs.
+- Distinguished typography-led stickers from illustration-led wearables; relative revision percentages are not universal layout tokens.
+- Documented compact heavy campaign lettering, flat vector illustration, scoped local palettes, authentic event marks, and varied sticker silhouettes.
+- Added final-source precedence and separate artwork, substrate preview, cut-guide, and vendor-preflight checks.
+- Preserved all global identity assets, core tokens, and presentation templates; no partner/campaign assets or fonts added to the release.
+
 ## 2.0.0 — 2026-08-12
 
 - Rebased global identity on the current 2026 Team1 source of truth: Ava Red `#E6212F`, Kanit Medium/Light, current wordmark/symbol/favicons, and corrected naming rules.

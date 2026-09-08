@@ -54,9 +54,9 @@ class RepositoryTests(unittest.TestCase):
     def test_release_metadata_uses_publication_date(self):
         manifest = json.loads((SKILL_ROOT / "manifest.json").read_text(encoding="utf-8"))
         changelog = (SKILL_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("2.0.0", manifest["version"])
-        self.assertEqual("2026-08-12", manifest["released"])
-        self.assertIn("2.0.0 — 2026-08-12", changelog)
+        self.assertEqual("2.1.0", manifest["version"])
+        self.assertEqual("2026-09-08", manifest["released"])
+        self.assertIn("2.1.0 — 2026-09-08", changelog)
         self.assertTrue(manifest["portable"])
         resources = manifest["canonicalResources"]
         for relative in resources.values():

@@ -2,8 +2,8 @@
   "schemaVersion": "2",
   "id": "team1-design-system",
   "name": "Team1 Design System",
-  "version": "2.0.0",
-  "released": "2026-08-12",
+  "version": "2.1.0",
+  "released": "2026-09-08",
   "entrypoint": "SKILL.md",
   "format": "https://agentskills.io/specification",
   "portable": true,
@@ -31,7 +31,8 @@
     "assetIndex": "assets/asset-index.json",
     "editablePresentation": "templates/Team1 Current Presentation Template.pptx",
     "visualReference": "templates/Team1 Current Presentation Template.pdf",
-    "qualityGate": "references/governance-and-qa.md"
+    "qualityGate": "references/governance-and-qa.md",
+    "merchCampaigns": "references/merch-campaigns.md"
   },
   "networkRequired": false,
   "containsExecutableInstaller": false,
