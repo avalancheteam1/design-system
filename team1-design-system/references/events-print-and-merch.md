@@ -30,3 +30,7 @@ Confirm final size, orientation, substrate, bleed, trim, safe area, finishing, v
 ## Merchandise
 
 Existing shirt, flag, sticker, and ticket artwork proves prior production, not a universal manufacturing standard. Start from approved vector art and obtain vendor specifications for ink, thread, material, minimum line, trapping, placement, safe area, and color matching. Approve a physical or photographed proof under realistic lighting before production. Do not alter the mark to accommodate a process; choose an approved variant or change the production method.
+
+## Campaign composition
+
+For typography-led stickers, illustration-led wearables, campaign type/palettes, final-source precedence and production handoff, read [merchandise campaign composition](merch-campaigns.md). These are derived medium-specific recommendations; supplier specifications and global identity still apply.

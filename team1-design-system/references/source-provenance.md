@@ -49,3 +49,7 @@ Metrics, chapter status, program names, application routes, dates, social handle
 - Existing print and merchandise files do not establish universal vendor specifications; each job still requires vendor preflight and proofing.
 
 Re-run the authority drift check before each release and update this file with the new commit, source dates, exceptions, and inspection coverage.
+
+## 2.1.0 scoped review — 2026-09-08
+
+The common repository HEAD was checked and remains `9d1b3d1a9d9e3e254149885605504c6dfd84ec54`; no global identity drift was found there. This release reviews only the owner-approved ETHRome/Blockchain Beach merchandise sources described in [comparison evidence](../examples/merch-campaign-comparison.md). The current presentation master and other Drive medium sources were not re-audited in this scoped documentation release; their August snapshot remains unchanged. All identity assets, templates and global tokens are unchanged. No campaign source, partner mark, photograph or font binary has been added.

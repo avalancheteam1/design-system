@@ -44,3 +44,7 @@ Do not bundle or redistribute fonts without their license. Verify installed font
 ## Composition
 
 Prefer clean hierarchy, generous spacing, one dominant message, and strong real imagery. Use red as a signal rather than a field of continuous decoration. Preserve contrast and keep text away from busy imagery. Avoid generic crypto tropes, invented UI, coins, neon chains, synthetic crowds, and effects applied merely to make an artifact feel “technical.”
+
+## Approved merchandise treatments
+
+For an explicitly approved merchandise campaign, see [campaign composition](merch-campaigns.md) for heavy lettering, solid red fields and local accents. These scoped treatments do not change the global font/color tokens or permit altered marks.

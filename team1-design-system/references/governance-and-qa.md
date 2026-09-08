@@ -34,3 +34,7 @@ Assign a content owner, design owner, implementation/production owner, and final
 ## Handoff
 
 Deliver the editable source, requested exports, versioned filenames, source/rights ledger, and a concise exceptions report. Remove hidden notes, stale links, personal paths, secrets, private identifiers, embedded font binaries without redistribution rights, and unused/restricted media. Confirm files open successfully and record final approval, delivery date, owner, and future expiry/review triggers.
+
+## Final artwork precedence and print evidence
+
+Use the latest owner-approved source as the comparison target, not an earlier generated mockup. Record the source checksum, any disclosed font reconstruction, raster content, physical dimensions and renderer limitations. Validate print artwork separately from preview imagery and cut guides using [the merchandise handoff checks](merch-campaigns.md#handoff-and-verification).
