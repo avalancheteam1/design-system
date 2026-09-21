@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-- Added derived 0.96 headline leading for event covers and social graphics, with a scoped token, manual-baseline examples and optical checks. Body copy, global font roles and inherited templates are unchanged.
+- Added derived 0.90 headline leading for event covers and social graphics, with a scoped token, manual-baseline examples and optical checks. Body copy, global font roles and inherited templates are unchanged.
 
 ## 2.1.0 — 2026-09-08
 
