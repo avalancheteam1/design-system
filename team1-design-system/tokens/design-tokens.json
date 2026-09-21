@@ -75,6 +75,11 @@
     }
   },
   "profiles": {
+    "eventDisplay": {
+      "scope": "Derived recommendation for short, stacked Kanit Medium headlines on event covers and social graphics only",
+      "source": "Requester feedback on event-cover spacing, 2026-09-21",
+      "headlineLineHeight": {"$type": "number", "$value": 0.96, "$description": "Baseline distance divided by font size; optical starting point, not body-copy or inherited-template leading"}
+    },
     "presentationCurrent": {
       "scope": "Only inside the current inherited presentation master",
       "source": "Team1 presentation master, 2026-08-03",

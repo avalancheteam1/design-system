@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+- Added derived 0.96 headline leading for event covers and social graphics, with a scoped token, manual-baseline examples and optical checks. Body copy, global font roles and inherited templates are unchanged.
+
 ## 2.1.0 — 2026-09-08
 
 - Added derived merchandise campaign guidance from the owner-approved ETHRome sticker set and Blockchain Beach production designs.
