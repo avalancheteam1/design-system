@@ -13,6 +13,14 @@ There is no current universal social template evidenced by the audited social fo
 
 Common planning sizes include 1080 × 1350 portrait, 1080 × 1080 square, and 1080 × 1920 story, but they are starting points, not permanent platform law. Confirm the channel at production time and export each required ratio deliberately.
 
+## Event headline leading — derived recommendation
+
+For short, stacked Kanit Medium headlines on event covers and social graphics, start at **0.90 line height**, using `profiles.eventDisplay.headlineLineHeight` in the canonical tokens. In SVG or other manually positioned layouts, set consecutive baselines to `font size × 0.90` apart; this is not the visible gap between letter shapes.
+
+This recommendation follows requester feedback on 21 September 2026 to slightly tighten an event cover's headline. The revised square cover uses 118.8 px baseline spacing at 132 px type (previously 138 px); its story companion uses 92.7 px at 103 px type (previously 108 px).
+
+Keep supporting copy visually separate. Move its position with the shortened title block when needed, preserving the existing title-to-subtitle gap. Inspect accents, ascenders, descenders and thumbnail readability; increase leading if glyphs collide. This is scoped display guidance, not a change to body-copy spacing, global font roles, or inherited presentation layouts.
+
 ## Blog exception
 
 The blog profile is intentionally distinct:

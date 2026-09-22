@@ -8,6 +8,8 @@ The source contains conflicting design-delivery estimates. Do not promise a desi
 
 ## Event kit
 
+For short stacked event-cover headlines, use the [derived event headline leading guidance](social-and-content.md#event-headline-leading--derived-recommendation). Keep body text and inherited templates outside that scoped treatment.
+
 A complete brief should define the event owner, audience, locale/timezone, approved name, format, venue, partners, required channels, print dimensions, registration/onboarding destination, photography plan, accessibility, and post-event deliverables. Keep Luma, social, slides, signage, and print visually related without forcing one composition into every ratio.
 
 Recompose each requested format for its real crop, reading distance, and production constraints. Common digital sizes are 1080 × 1350 feed, 1080 × 1920 story, and 1200 × 630 social preview. A4, roll-up, badge/ticket, and other print sizes must come from the printer or hardware template; no universal bleed or hidden-base dimension is authoritative. Keep essential content inside platform/vendor safe zones and inspect full-size plus thumbnail/distance views.

@@ -10,4 +10,6 @@ Use `global` for new work. Values under `profiles` are controlled exceptions and
 
 The `retired` map exists for migration and linting. Never treat its values as a usable palette. Status error is `#dc2626`; do not use brand red `#E6212F` as an error color.
 
+`profiles.eventDisplay.headlineLineHeight` is a derived 0.90 starting point for short stacked Kanit Medium event headlines. Multiply font size by this value for manual baseline placement. It is deliberately excluded from the global CSS foundations; it does not govern body copy or inherited presentation layouts. See the [social guidance](../references/social-and-content.md#event-headline-leading--derived-recommendation) for scope and optical checks.
+
 No font files are included. Verify font licenses, installed weights, target-language glyph coverage, fallback behavior, contrast, zoom, and reduced-motion behavior in the final medium.
