@@ -1,8 +1,10 @@
 # Changelog
 
-## Unreleased
+## 2.2.0 — 2026-09-29
 
-- Added derived 0.90 headline leading for event covers and social graphics, with a scoped token, manual-baseline examples and optical checks. Body copy, global font roles and inherited templates are unchanged.
+- Added the derived 0.90 headline-leading starting point for Kanit Medium event covers and social graphics, with manual-baseline examples and optical checks.
+- Recorded Sangeeth's compact Kanit image-title treatment: Semibold 600, 77% line height and −4% tracking, with a separate scoped token and Figma/Illustrator export checks. It is not a global heading rule or an exact claim about Cem's files.
+- Kept body copy, global font roles, identity assets and inherited templates unchanged.
 
 ## 2.1.0 — 2026-09-08
 

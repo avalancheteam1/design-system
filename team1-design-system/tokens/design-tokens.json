@@ -80,6 +80,14 @@
       "source": "Requester feedback on event-cover spacing, 2026-09-21",
       "headlineLineHeight": {"$type": "number", "$value": 0.90, "$description": "Baseline distance divided by font size; optical starting point, not body-copy or inherited-template leading"}
     },
+    "imageTitleSangeeth": {
+      "scope": "Compact Kanit titles inside image artwork following Sangeeth's designer treatment; not global typography or an inherited template rule",
+      "source": "Sangeeth, direct design guidance, 2026-09-29",
+      "fontFamily": {"$type": "fontFamily", "$value": "Kanit"},
+      "fontWeight": {"$type": "fontWeight", "$value": 600, "$description": "Semibold for titles"},
+      "lineHeight": {"$type": "number", "$value": 0.77, "$description": "77% of font size; inspect the final image for clipping and glyph collisions"},
+      "letterSpacing": {"$type": "dimension", "$value": "-0.04em", "$description": "-4% tracking in the design editor; inspect the final export"}
+    },
     "presentationCurrent": {
       "scope": "Only inside the current inherited presentation master",
       "source": "Team1 presentation master, 2026-08-03",

@@ -7,3 +7,9 @@ Requester feedback on 21 September 2026 asked for a slight reduction in line hei
 Both final PNG exports (1600 × 1600 and 1080 × 1920) were visually inspected after rendering from the actual Kanit Medium/Light outlines. Text is unclipped, lines do not collide, and the original art, logo and public copy are unchanged. The full event artwork remains in the event workspace; this repository carries only the typography proof.
 
 This is scoped event-cover guidance, not an official global typography change. No release version or tag is changed.
+
+## 2.2.0 image-title proof
+
+`kanit-image-title-2.2-comparison.png` compares the same two-line phrase in Kanit Semibold at 112 px. The left panel uses 90% line height and default tracking; the right uses Sangeeth's 77% line height and −4% tracking. The right panel was inspected at its 1600 × 660 px export size: neither line is clipped, the lines do not collide, and the text remains readable. This proof tests the documented title treatment, not a universal safe setting for every word, script, editor, or crop. Final artwork still needs its own visual check.
+
+The proof was rendered using a temporary Kanit Semibold file from the Google Fonts `ofl/kanit` source; no font binary is committed or included in the portable package.

@@ -53,3 +53,7 @@ Re-run the authority drift check before each release and update this file with t
 ## 2.1.0 scoped review — 2026-09-08
 
 The common repository HEAD was checked and remains `9d1b3d1a9d9e3e254149885605504c6dfd84ec54`; no global identity drift was found there. This release reviews only the owner-approved ETHRome/Blockchain Beach merchandise sources described in [comparison evidence](../examples/merch-campaign-comparison.md). The current presentation master and other Drive medium sources were not re-audited in this scoped documentation release; their August snapshot remains unchanged. All identity assets, templates and global tokens are unchanged. No campaign source, partner mark, photograph or font binary has been added.
+
+## 2.2.0 scoped review — 2026-09-29
+
+Sangeeth confirmed in a direct Telegram conversation on 29 September 2026 that his Kanit titles inside image artwork use 77% line height, −4% letter spacing and Semibold weight. He described Cem's work as similar but did not supply Cem's exact settings. The package records Sangeeth's treatment as a scoped image-title profile, while retaining the earlier derived 0.90 Kanit Medium event-cover starting point. The user requested this update and a minor release. The private `avalancheteam1/common` default branch was checked again on 29 September and remains `9d1b3d1a9d9e3e254149885605504c6dfd84ec54`. The current presentation master and other Drive sources were not re-audited for this typography-only release. No identity asset, template, global token or font binary changed.
