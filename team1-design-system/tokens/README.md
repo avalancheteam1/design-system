@@ -12,4 +12,6 @@ The `retired` map exists for migration and linting. Never treat its values as a 
 
 `profiles.eventDisplay.headlineLineHeight` is a derived 0.90 starting point for short stacked Kanit Medium event headlines. Multiply font size by this value for manual baseline placement. It is deliberately excluded from the global CSS foundations; it does not govern body copy or inherited presentation layouts. See the [social guidance](../references/social-and-content.md#event-headline-leading--derived-recommendation) for scope and optical checks.
 
+`profiles.imageTitleSangeeth` records the designer's Kanit Semibold 600, 0.77 line height and `-0.04em` tracking for titles inside images. Use it only when adopting that compact image-title treatment, then inspect the final render. It overrides the 0.90 event-display starting point in that scope and is excluded from the global CSS export. See the [image-title guidance](../references/social-and-content.md#kanit-titles-inside-images--designer-treatment).
+
 No font files are included. Verify font licenses, installed weights, target-language glyph coverage, fallback behavior, contrast, zoom, and reduced-motion behavior in the final medium.

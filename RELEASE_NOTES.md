@@ -1,3 +1,11 @@
+# Team1 Design System 2.2.0
+
+This private minor release adds a compact image-title profile from Sangeeth's 29 September design guidance: Kanit Semibold 600, 77% line height and −4% letter spacing. It also packages the previously reviewed 0.90 Kanit Medium event-cover leading recommendation. Use the 77% treatment for titles inside images when following Sangeeth's style; it does not change the global Kanit Medium heading rule, inherited presentation layouts, or claim Cem uses identical settings.
+
+The release contains no new font files, images, logos or templates. Download `team1-design-system-v2.2.0.zip` and verify its accompanying SHA-256 file. The ZIP contains one top-level `team1-design-system/` folder.
+
+---
+
 # Team1 Design System 2.0.0
 
 This major private release rebases the portable Team1 Agent Skill on the current 2026 global brand authority and the shared Drive’s current medium masters.

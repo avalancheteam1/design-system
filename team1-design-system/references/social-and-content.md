@@ -21,6 +21,12 @@ This recommendation follows requester feedback on 21 September 2026 to slightly 
 
 Keep supporting copy visually separate. Move its position with the shortened title block when needed, preserving the existing title-to-subtitle gap. Inspect accents, ascenders, descenders and thumbnail readability; increase leading if glyphs collide. This is scoped display guidance, not a change to body-copy spacing, global font roles, or inherited presentation layouts.
 
+## Kanit titles inside images — designer treatment
+
+For the compact Kanit title treatment Sangeeth uses in image artwork, set **Kanit Semibold (600)**, **77% line height** and **−4% letter spacing** (`-0.04em`). These are the exact values Sangeeth confirmed on 29 September 2026 for text in his images. He said Cem uses a similar treatment, but did not confirm identical settings for Cem's files. Sangeeth works in Figma and Cem in Illustrator; enter the same percentages in the native editor and check the rendered export rather than assuming their text engines place glyphs identically.
+
+Use `profiles.imageTitleSangeeth` for this treatment. It takes precedence over the derived 0.90 event-cover starting point **only when reproducing or deliberately adopting this compact image-title style**. The 0.90 recommendation remains available for ordinary Kanit Medium event headlines. Neither setting changes global headings, body copy, editable document text, or inherited presentation layouts. At 77%, inspect each line at final size for clipping, collisions, accents, descenders and legibility in the intended crop; loosen the spacing when the actual words or script require it.
+
 ## Blog exception
 
 The blog profile is intentionally distinct:

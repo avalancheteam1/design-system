@@ -54,13 +54,22 @@ class RepositoryTests(unittest.TestCase):
     def test_release_metadata_uses_publication_date(self):
         manifest = json.loads((SKILL_ROOT / "manifest.json").read_text(encoding="utf-8"))
         changelog = (SKILL_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("2.1.0", manifest["version"])
-        self.assertEqual("2026-09-08", manifest["released"])
-        self.assertIn("2.1.0 — 2026-09-08", changelog)
+        self.assertEqual("2.2.0", manifest["version"])
+        self.assertEqual("2026-09-29", manifest["released"])
+        self.assertIn("2.2.0 — 2026-09-29", changelog)
         self.assertTrue(manifest["portable"])
         resources = manifest["canonicalResources"]
         for relative in resources.values():
             self.assertTrue((SKILL_ROOT / relative).is_file(), relative)
+
+    def test_image_title_profile_is_scoped_and_matches_designer_guidance(self):
+        tokens = json.loads((SKILL_ROOT / "tokens" / "design-tokens.json").read_text(encoding="utf-8"))
+        profile = tokens["profiles"]["imageTitleSangeeth"]
+        self.assertEqual(600, profile["fontWeight"]["$value"])
+        self.assertEqual(0.77, profile["lineHeight"]["$value"])
+        self.assertEqual("-0.04em", profile["letterSpacing"]["$value"])
+        self.assertEqual(500, tokens["global"]["typography"]["heading"]["weight"])
+        self.assertEqual(0.90, tokens["profiles"]["eventDisplay"]["headlineLineHeight"]["$value"])
 
     def test_skill_directory_name_matches_frontmatter(self):
         skill = (SKILL_ROOT / "SKILL.md").read_text(encoding="utf-8")

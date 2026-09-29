@@ -3,7 +3,7 @@ name: team1-design-system
 description: Use when creating, revising, reviewing, or specifying Team1-branded presentations, websites, social content, event materials, regional collateral, photography, video, documents, print, merchandise, or partner-facing work.
 license: See NOTICE.md
 metadata:
-  version: "2.1.0"
+  version: "2.2.0"
   authority-snapshot: "2026-08-12"
 ---
 
@@ -38,7 +38,7 @@ The global brand red is `#E6212F`. `#FF394A` is retired. `#E84142` is Avalanche-
 
 - Use authentic current Team1 assets. Never redraw, trace, typeset, recolor, distort, crop from a screenshot, add effects to, or generate a substitute logo.
 - The emblem/logotype always has a lowercase `t`. In prose, use `Team1` at a sentence start, in a title, or as a proper-name treatment; `team1` is acceptable in flowing copy; never use `TEAM1`.
-- Global typography is Kanit Medium 500 for headings and Kanit Light 300 for body. Aeonik is a controlled alternative. Presentation, chapter, video, and blog profiles have documented exceptions; do not promote an exception to the global system.
+- Global typography is Kanit Medium 500 for headings and Kanit Light 300 for body. Aeonik is a controlled alternative. Presentation, chapter, video, blog, and image-title profiles have documented exceptions; do not promote an exception to the global system.
 - Do not bundle or redistribute font binaries from this package. Obtain fonts from an authorized source and verify the license and target-language glyphs.
 - Do not publish an unverified metric, date, chapter status, partner relationship, handle, destination, tracking link, or QR. A QR needs a visible fallback URL and scan tests from the final export or physical proof.
 - Do not reuse attendee/member media without recorded rights, context, consent, channel, territory, and expiry. Never expose applications, attendance data, contacts, or private operational material.

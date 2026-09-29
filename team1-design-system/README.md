@@ -1,10 +1,10 @@
 # Team1 Design System Agent Skill
 
-Version 2.1.0 is a portable Team1 brand and production system for humans and AI agents. It combines the current global identity, official logo families, current chapter vectors, a current presentation master, machine-readable tokens, medium-specific rules, and output QA.
+Version 2.2.0 is a portable Team1 brand and production system for humans and AI agents. It combines the current global identity, official logo families, current chapter vectors, a current presentation master, machine-readable tokens, medium-specific rules, and output QA.
 
 ## Quick start
 
-1. Download `team1-design-system-v2.1.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use this folder from an authorized checkout.
+1. Download `team1-design-system-v2.2.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use this folder from an authorized checkout.
 2. Keep the complete directory named `team1-design-system`; `SKILL.md`, assets, tokens, templates, and references work together.
 3. Follow the [cross-harness guide](references/compatibility.md), start a fresh session, and say: “Use the team1-design-system skill to create…”
 4. Supply audience, locale, dimensions, deadline, approved copy/facts, links, photos, partner files, editable format, and final export.
