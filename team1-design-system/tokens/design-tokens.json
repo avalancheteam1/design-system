@@ -1,107 +1,979 @@
 {
-  "format": "team1-design-tokens/2",
-  "authoritySnapshot": "2026-08-12",
+  "$description": "Team1 Design System 3.0.0 design tokens. W3C Design Tokens Community Group format ($type/$value). This file is the single source for the generated CSS custom properties (design-tokens.css) and the Tailwind 4 theme (tailwind-theme.css); regenerate them with scripts/build_tokens.py.",
+  "$extensions": {
+    "network.team1": {
+      "format": "team1-design-tokens/3",
+      "version": "3.0.0",
+      "authoritySnapshot": "2026-11-20",
+      "decisionRecord": "Web and product decisions Q1–Q13 approved by Giacomo Barbieri (Team1), 2026-11-20, after a review of the live Team1 web properties. See references/digital-and-web.md and CHANGELOG.md.",
+      "generated": [
+        "tokens/design-tokens.css",
+        "tokens/tailwind-theme.css"
+      ],
+      "retired": {
+        "#FF394A": "Retired Team1 red; historical v1 content signal only. Replace with color.brand.primary (and web shadow tokens for glows).",
+        "#E84142": "Not Team1 primary; Avalanche-origin or inherited presentation context only. Replace with color.brand.primary on Team1 web properties.",
+        "#e02d3d": "2.x brand hover. Retired in 3.0.0: it is visually identical to #E6212F (4.55 vs 4.54 against white). Use web.state.button tokens.",
+        "#6c757d": "2.x light tertiary text. Retired in 3.0.0 for web: 4.31:1 on #F5F5F9 fails AA. Use web.theme.light.textMuted.",
+        "0 0 0 3px rgba(230, 33, 47, 0.1)": "2.x focus ring. Retired in 3.0.0: invisible on black. Use web.focus."
+      }
+    }
+  },
   "global": {
     "color": {
       "brand": {
-        "primary": {"$type": "color", "$value": "#E6212F"},
-        "hover": {"$type": "color", "$value": "#e02d3d"},
-        "gradientEnd": {"$type": "color", "$value": "#d02938"}
+        "primary": {
+          "$type": "color",
+          "$value": "#E6212F",
+          "$description": "Ava Red. The only Team1 accent in web UI. Fill, large type and marks; for small red text use web.theme.*.textBrand."
+        },
+        "gradientEnd": {
+          "$type": "color",
+          "$value": "#d02938",
+          "$description": "Gradient end for approved red fields"
+        },
+        "scale": {
+          "50": {
+            "$type": "color",
+            "$value": "#fdeff0",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "100": {
+            "$type": "color",
+            "$value": "#fbdfe1",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "200": {
+            "$type": "color",
+            "$value": "#f8bdc1",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "300": {
+            "$type": "color",
+            "$value": "#f28f96",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "400": {
+            "$type": "color",
+            "$value": "#ec5a64",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "500": {
+            "$type": "color",
+            "$value": "#E6212F",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "600": {
+            "$type": "color",
+            "$value": "#d11725",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "700": {
+            "$type": "color",
+            "$value": "#b0141f",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "800": {
+            "$type": "color",
+            "$value": "#901019",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "900": {
+            "$type": "color",
+            "$value": "#790e15",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          },
+          "950": {
+            "$type": "color",
+            "$value": "#47080c",
+            "$description": "Brand red scale (seeded from avalancheteam1/ecosystem-hub). 500 is Ava Red."
+          }
+        }
       },
       "accent": {
-        "avaBlue": {"$type": "color", "$value": "#3055B3"},
-        "secondaryBlue": {"$type": "color", "$value": "#058AFF"}
+        "$description": "Identity accents. Not used as web UI accents from 3.0.0 (red is the only UI accent); allowed in the blog profile, approved merchandise/campaign palettes and data visualisation.",
+        "avaBlue": {
+          "$type": "color",
+          "$value": "#3055B3"
+        },
+        "avaBlueHover": {
+          "$type": "color",
+          "$value": "#264496"
+        },
+        "secondaryBlue": {
+          "$type": "color",
+          "$value": "#058AFF"
+        },
+        "secondaryBlueHover": {
+          "$type": "color",
+          "$value": "#0470d9"
+        }
+      },
+      "neutral": {
+        "black": {
+          "$type": "color",
+          "$value": "#000000"
+        },
+        "white": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "darkGray": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "lightGray": {
+          "$type": "color",
+          "$value": "#F5F5F9"
+        }
       },
       "dark": {
-        "background": {"$type": "color", "$value": "#000000"},
-        "surface": {"$type": "color", "$value": "#161617"},
-        "surfaceVariant": {"$type": "color", "$value": "#1a1b1c"},
-        "surfaceHover": {"$type": "color", "$value": "#2a2b2c"},
-        "textBrand": {"$type": "color", "$value": "#E6212F", "$description": "Official source role for approved headings and emphasis; test contrast in context"},
-        "textHighContrast": {"$type": "color", "$value": "#FFFFFF", "$description": "Derived semantic name for readable high-contrast copy on dark surfaces"},
-        "textSecondary": {"$type": "color", "$value": "#e5e7eb"},
-        "textTertiary": {"$type": "color", "$value": "#9ca3af"},
-        "border": {"$type": "color", "$value": "#2a2d31"}
+        "$description": "2.x-compatible dark roles (identity level). Web implementations use web.theme.dark.",
+        "background": {
+          "$type": "color",
+          "$value": "#000000"
+        },
+        "surface": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "surfaceVariant": {
+          "$type": "color",
+          "$value": "#1a1b1c"
+        },
+        "surfaceHover": {
+          "$type": "color",
+          "$value": "#2a2b2c"
+        },
+        "textBrand": {
+          "$type": "color",
+          "$value": "#EC5A64",
+          "$description": "Red text on dark (brand scale 400): 6.21:1 on #000000, 5.35:1 on #161617. Ava Red #E6212F as text on #161617 is 3.98:1 and is reserved for large display type (>=24px) and marks."
+        },
+        "textHighContrast": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "textSecondary": {
+          "$type": "color",
+          "$value": "#e5e7eb"
+        },
+        "textTertiary": {
+          "$type": "color",
+          "$value": "#9ca3af"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "#2a2d31",
+          "$description": "Opaque border for print/static media; web uses translucent web.theme.dark.border"
+        }
       },
       "light": {
-        "background": {"$type": "color", "$value": "#FFFFFF"},
-        "surface": {"$type": "color", "$value": "#F5F5F9"},
-        "surfaceVariant": {"$type": "color", "$value": "#e8e9ec"},
-        "surfaceHover": {"$type": "color", "$value": "#d8d9dc"},
-        "textBrand": {"$type": "color", "$value": "#E6212F", "$description": "Official source role for approved headings and emphasis; test contrast in context"},
-        "textHighContrast": {"$type": "color", "$value": "#161617", "$description": "Derived semantic name for readable high-contrast copy on light surfaces"},
-        "textTertiary": {"$type": "color", "$value": "#6c757d"},
-        "border": {"$type": "color", "$value": "#d8d9dc"}
+        "$description": "2.x-compatible light roles (identity level). Web implementations use web.theme.light.",
+        "background": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "surface": {
+          "$type": "color",
+          "$value": "#F5F5F9"
+        },
+        "surfaceVariant": {
+          "$type": "color",
+          "$value": "#e8e9ec"
+        },
+        "surfaceHover": {
+          "$type": "color",
+          "$value": "#d8d9dc"
+        },
+        "textBrand": {
+          "$type": "color",
+          "$value": "#d11725",
+          "$description": "Red text on light (brand scale 600): 5.44:1 on #FFFFFF, 5.00:1 on #F5F5F9."
+        },
+        "textHighContrast": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "textTertiary": {
+          "$type": "color",
+          "$value": "#5f6670",
+          "$description": "Replaces #6c757d (failed AA on #F5F5F9)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "#d8d9dc"
+        }
       },
       "status": {
-        "success": {"$type": "color", "$value": "#16a34a"},
-        "warning": {"$type": "color", "$value": "#f59e0b"},
-        "error": {"$type": "color", "$value": "#dc2626", "$description": "Never substitute Team1 brand red for errors"},
-        "info": {"$type": "color", "$value": "#2563eb"},
-        "featured": {"$type": "color", "$value": "#9333ea"}
+        "success": {
+          "$type": "color",
+          "$value": "#16a34a"
+        },
+        "warning": {
+          "$type": "color",
+          "$value": "#f59e0b"
+        },
+        "error": {
+          "$type": "color",
+          "$value": "#dc2626",
+          "$description": "Never substitute Team1 brand red for errors; pair with an icon and text because #DC2626 and #E6212F are close in hue"
+        },
+        "info": {
+          "$type": "color",
+          "$value": "#2563eb",
+          "$description": "Identity/data-visualisation only. Web UI info states are neutral from 3.0.0"
+        },
+        "featured": {
+          "$type": "color",
+          "$value": "#9333ea",
+          "$description": "Not used in web UI from 3.0.0"
+        }
       },
       "social": {
-        "discord": {"$type": "color", "$value": "#5865F2"},
-        "x": {"$type": "color", "$value": "#1a1a1a"}
+        "discord": {
+          "$type": "color",
+          "$value": "#5865F2",
+          "$description": "Third-party mark colour; do not use for Team1 buttons"
+        },
+        "x": {
+          "$type": "color",
+          "$value": "#1a1a1a"
+        }
       }
     },
     "typography": {
-      "heading": {"family": {"$type": "fontFamily", "$value": "Kanit Medium"}, "weight": 500},
-      "body": {"family": {"$type": "fontFamily", "$value": "Kanit Light"}, "weight": 300},
-      "alternative": {"family": {"$type": "fontFamily", "$value": "Aeonik"}, "$description": "Controlled alternative; use sparingly"},
+      "heading": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "Kanit Medium"
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 500
+        }
+      },
+      "body": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "Kanit Light",
+          "$description": "Body baseline for print, social, documents and other non-web media. Web and product UI use web.typography (Inter)."
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 300
+        }
+      },
+      "alternative": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "Aeonik",
+          "$description": "Controlled alternative for video captions, chapter marks and approved print only. Not used in web or product UI from 3.0.0."
+        }
+      },
       "scale": {
-        "h1": {"desktop": "36px", "mobile": "30px"},
-        "h2": {"desktop": "30px", "mobile": "24px"},
-        "h3": {"desktop": "24px", "mobile": "20px"},
-        "h4": "20px", "h5": "18px", "h6": "16px",
-        "bodyLarge": "18px", "body": "16px", "bodySmall": "14px", "caption": "12px"
+        "h1": {
+          "desktop": {
+            "$type": "dimension",
+            "$value": "36px"
+          },
+          "mobile": {
+            "$type": "dimension",
+            "$value": "30px"
+          }
+        },
+        "h2": {
+          "desktop": {
+            "$type": "dimension",
+            "$value": "30px"
+          },
+          "mobile": {
+            "$type": "dimension",
+            "$value": "24px"
+          }
+        },
+        "h3": {
+          "desktop": {
+            "$type": "dimension",
+            "$value": "24px"
+          },
+          "mobile": {
+            "$type": "dimension",
+            "$value": "20px"
+          }
+        },
+        "h4": {
+          "$type": "dimension",
+          "$value": "20px"
+        },
+        "h5": {
+          "$type": "dimension",
+          "$value": "18px"
+        },
+        "h6": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "bodyLarge": {
+          "$type": "dimension",
+          "$value": "18px"
+        },
+        "body": {
+          "$type": "dimension",
+          "$value": "16px"
+        },
+        "bodySmall": {
+          "$type": "dimension",
+          "$value": "14px"
+        },
+        "caption": {
+          "$type": "dimension",
+          "$value": "12px"
+        }
       }
     },
-    "spacing": {"0.5": "2px", "1": "4px", "1.5": "6px", "2": "8px", "3": "12px", "3.5": "14px", "4": "16px", "5": "20px", "6": "24px", "8": "32px", "10": "40px", "12": "48px", "16": "64px", "20": "80px"},
-    "radius": {"label": "4px", "small": "6px", "control": "8px", "large": "10px", "card": "12px", "projectLogo": "16px", "pill": "9999px"},
-    "zIndex": {"base": 0, "raised": 10, "dropdown": 20, "sticky": 30, "fixed": 40, "navbar": 50, "overlay": 60, "modal": 70, "toast": 80, "tooltip": 90},
+    "spacing": {
+      "0.5": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "1": {
+        "$type": "dimension",
+        "$value": "4px"
+      },
+      "1.5": {
+        "$type": "dimension",
+        "$value": "6px"
+      },
+      "2": {
+        "$type": "dimension",
+        "$value": "8px"
+      },
+      "3": {
+        "$type": "dimension",
+        "$value": "12px"
+      },
+      "3.5": {
+        "$type": "dimension",
+        "$value": "14px"
+      },
+      "4": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "5": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "6": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "8": {
+        "$type": "dimension",
+        "$value": "32px"
+      },
+      "10": {
+        "$type": "dimension",
+        "$value": "40px"
+      },
+      "12": {
+        "$type": "dimension",
+        "$value": "48px"
+      },
+      "16": {
+        "$type": "dimension",
+        "$value": "64px"
+      },
+      "20": {
+        "$type": "dimension",
+        "$value": "80px"
+      }
+    },
+    "zIndex": {
+      "base": {
+        "$type": "number",
+        "$value": 0
+      },
+      "raised": {
+        "$type": "number",
+        "$value": 10
+      },
+      "dropdown": {
+        "$type": "number",
+        "$value": 20
+      },
+      "sticky": {
+        "$type": "number",
+        "$value": 30
+      },
+      "fixed": {
+        "$type": "number",
+        "$value": 40
+      },
+      "navbar": {
+        "$type": "number",
+        "$value": 50
+      },
+      "overlay": {
+        "$type": "number",
+        "$value": 60
+      },
+      "modal": {
+        "$type": "number",
+        "$value": 70
+      },
+      "toast": {
+        "$type": "number",
+        "$value": 80
+      },
+      "tooltip": {
+        "$type": "number",
+        "$value": 90
+      }
+    },
     "responsive": {
-      "breakpoints": {"sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px", "2xl": "1536px"},
-      "containerMax": "1280px", "paddingDesktop": "24px", "paddingMobile": "16px", "touchTargetMin": "44px"
+      "breakpoints": {
+        "sm": {
+          "$type": "dimension",
+          "$value": "640px"
+        },
+        "md": {
+          "$type": "dimension",
+          "$value": "768px"
+        },
+        "lg": {
+          "$type": "dimension",
+          "$value": "1024px"
+        },
+        "xl": {
+          "$type": "dimension",
+          "$value": "1280px"
+        },
+        "2xl": {
+          "$type": "dimension",
+          "$value": "1536px"
+        }
+      },
+      "containerMax": {
+        "$type": "dimension",
+        "$value": "1280px"
+      },
+      "paddingDesktop": {
+        "$type": "dimension",
+        "$value": "24px"
+      },
+      "paddingMobile": {
+        "$type": "dimension",
+        "$value": "16px"
+      },
+      "touchTargetMin": {
+        "$type": "dimension",
+        "$value": "44px"
+      }
     },
     "motion": {
-      "fast": "150ms ease", "medium": "200ms ease", "slow": "300ms ease", "entrance": "400ms cubic-bezier(0.16, 1, 0.3, 1)",
-      "entranceOffset": "20px", "stagger": "80ms", "reducedMotion": "disable nonessential animation"
+      "fast": {
+        "$type": "duration",
+        "$value": "150ms"
+      },
+      "medium": {
+        "$type": "duration",
+        "$value": "200ms"
+      },
+      "slow": {
+        "$type": "duration",
+        "$value": "300ms"
+      },
+      "easeStandard": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.4,
+          0,
+          0.2,
+          1
+        ]
+      },
+      "easeEntrance": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ],
+        "$description": "Brand entrance curve (supersedes the hub's 0.22,1,0.36,1)"
+      },
+      "entrance": {
+        "$type": "string",
+        "$value": "400ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "$description": "400ms fade-up entrance"
+      },
+      "entranceOffset": {
+        "$type": "dimension",
+        "$value": "20px"
+      },
+      "stagger": {
+        "$type": "duration",
+        "$value": "80ms"
+      },
+      "reducedMotion": {
+        "$type": "string",
+        "$value": "disable nonessential animation; replace scale/translate feedback with colour steps"
+      }
+    }
+  },
+  "web": {
+    "$description": "Team1 web and product UI system (3.0.0). Applies to every Team1 web property, including chapter and campaign sites (core layer, see references/digital-and-web.md).",
+    "typography": {
+      "heading": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Kanit",
+            "ui-sans-serif",
+            "system-ui",
+            "sans-serif"
+          ],
+          "$description": "Kanit Medium for headings and display"
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 500
+        }
+      },
+      "body": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Inter",
+            "ui-sans-serif",
+            "system-ui",
+            "sans-serif"
+          ],
+          "$description": "Inter for body and UI text"
+        },
+        "weightLongForm": {
+          "$type": "fontWeight",
+          "$value": 300,
+          "$description": "Long-form reading text at 16px or larger"
+        },
+        "weightUi": {
+          "$type": "fontWeight",
+          "$value": 400,
+          "$description": "UI text at 14px or smaller: labels, inputs, tables, captions, nav"
+        },
+        "weightUiStrong": {
+          "$type": "fontWeight",
+          "$value": 500,
+          "$description": "Buttons, active tabs, table headers"
+        },
+        "lineHeightLongForm": {
+          "$type": "number",
+          "$value": 1.6
+        },
+        "lineHeightUi": {
+          "$type": "number",
+          "$value": 1.45
+        }
+      },
+      "mono": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "JetBrains Mono",
+            "ui-monospace",
+            "SFMono-Regular",
+            "monospace"
+          ],
+          "$description": "Metadata (dates, counts, numbering) and code"
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 400
+        },
+        "metaSize": {
+          "$type": "dimension",
+          "$value": "12px"
+        },
+        "metaTracking": {
+          "$type": "dimension",
+          "$value": "0.04em"
+        }
+      },
+      "headingLineHeight": {
+        "$type": "number",
+        "$value": 1.15
+      },
+      "headingTracking": {
+        "$type": "dimension",
+        "$value": "-0.01em"
+      }
     },
-    "focus": {"ring": "0 0 0 3px rgba(230, 33, 47, 0.1)"},
-    "shadow": {
-      "default": "0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1)",
-      "cardBrand": "0 4px 24px 0 rgba(230, 33, 47, 0.15)"
+    "radius": {
+      "$description": "Pill / 12 / 20 scale. xs (6px) is the one justified extra step: a 12px radius on an 18px checkbox reads as a radio button, and inline code/kbd chips need a tight corner.",
+      "xs": {
+        "$type": "dimension",
+        "$value": "6px",
+        "$description": "Checkbox, inline code, kbd, items inside 12px menus and popovers"
+      },
+      "sm": {
+        "$type": "dimension",
+        "$value": "12px",
+        "$description": "Fields (input, select, textarea), menus, popovers, tooltips, alerts, media inside cards, table frames inside cards"
+      },
+      "lg": {
+        "$type": "dimension",
+        "$value": "20px",
+        "$description": "Cards, dialogs, sheets, large media"
+      },
+      "full": {
+        "$type": "dimension",
+        "$value": "9999px",
+        "$description": "Buttons, badges, tabs, switches, chips, avatars"
+      }
+    },
+    "theme": {
+      "dark": {
+        "$description": "Default theme. Pure neutral black (no tint) with translucent borders.",
+        "background": {
+          "$type": "color",
+          "$value": "#000000"
+        },
+        "surface": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "surfaceRaised": {
+          "$type": "color",
+          "$value": "#1a1b1c"
+        },
+        "surfaceHover": {
+          "$type": "color",
+          "$value": "#2a2b2c"
+        },
+        "overlay": {
+          "$type": "color",
+          "$value": "rgba(0, 0, 0, 0.72)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "rgba(255, 255, 255, 0.08)",
+          "$description": "Decorative dividers and card edges"
+        },
+        "borderStrong": {
+          "$type": "color",
+          "$value": "rgba(255, 255, 255, 0.16)",
+          "$description": "Outline buttons, emphasised dividers"
+        },
+        "inputBorder": {
+          "$type": "color",
+          "$value": "rgba(255, 255, 255, 0.38)",
+          "$description": "Form-field boundary: >=3:1 against the canvas and field fill (WCAG 1.4.11)"
+        },
+        "textHeading": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "textBody": {
+          "$type": "color",
+          "$value": "#e5e7eb"
+        },
+        "textMuted": {
+          "$type": "color",
+          "$value": "#9ca3af"
+        },
+        "textBrand": {
+          "$type": "color",
+          "$value": "#EC5A64"
+        },
+        "textOnBrand": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "textError": {
+          "$type": "color",
+          "$value": "#f87171"
+        },
+        "textSuccess": {
+          "$type": "color",
+          "$value": "#4ade80"
+        },
+        "textWarning": {
+          "$type": "color",
+          "$value": "#fbbf24"
+        },
+        "focusRing": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "shadowCard": {
+          "$type": "shadow",
+          "$value": "0 4px 24px 0 rgba(230, 33, 47, 0.15)",
+          "$description": "Default glow card at rest"
+        },
+        "shadowCardHover": {
+          "$type": "shadow",
+          "$value": "0 8px 32px 0 rgba(230, 33, 47, 0.28)"
+        },
+        "shadowButtonHover": {
+          "$type": "shadow",
+          "$value": "0 6px 20px -4px rgba(230, 33, 47, 0.55)"
+        },
+        "shadowOverlay": {
+          "$type": "shadow",
+          "$value": "0 24px 48px -12px rgba(0, 0, 0, 0.8)",
+          "$description": "Dialogs, popovers"
+        }
+      },
+      "light": {
+        "$description": "Optional light theme (brand-book #FFFFFF / #F5F5F9).",
+        "background": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "surface": {
+          "$type": "color",
+          "$value": "#F5F5F9"
+        },
+        "surfaceRaised": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "surfaceHover": {
+          "$type": "color",
+          "$value": "#e8e9ec"
+        },
+        "overlay": {
+          "$type": "color",
+          "$value": "rgba(22, 22, 23, 0.45)"
+        },
+        "border": {
+          "$type": "color",
+          "$value": "rgba(22, 22, 23, 0.10)"
+        },
+        "borderStrong": {
+          "$type": "color",
+          "$value": "rgba(22, 22, 23, 0.20)"
+        },
+        "inputBorder": {
+          "$type": "color",
+          "$value": "rgba(22, 22, 23, 0.50)",
+          "$description": "Form-field boundary >=3:1 (WCAG 1.4.11)"
+        },
+        "textHeading": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "textBody": {
+          "$type": "color",
+          "$value": "#3f3f46"
+        },
+        "textMuted": {
+          "$type": "color",
+          "$value": "#5f6670"
+        },
+        "textBrand": {
+          "$type": "color",
+          "$value": "#d11725"
+        },
+        "textOnBrand": {
+          "$type": "color",
+          "$value": "#FFFFFF"
+        },
+        "textError": {
+          "$type": "color",
+          "$value": "#b91c1c"
+        },
+        "textSuccess": {
+          "$type": "color",
+          "$value": "#166534"
+        },
+        "textWarning": {
+          "$type": "color",
+          "$value": "#92400e"
+        },
+        "focusRing": {
+          "$type": "color",
+          "$value": "#161617"
+        },
+        "shadowCard": {
+          "$type": "shadow",
+          "$value": "0 4px 24px 0 rgba(230, 33, 47, 0.10)"
+        },
+        "shadowCardHover": {
+          "$type": "shadow",
+          "$value": "0 8px 32px 0 rgba(230, 33, 47, 0.18)"
+        },
+        "shadowButtonHover": {
+          "$type": "shadow",
+          "$value": "0 6px 20px -4px rgba(230, 33, 47, 0.40)"
+        },
+        "shadowOverlay": {
+          "$type": "shadow",
+          "$value": "0 24px 48px -12px rgba(22, 22, 23, 0.25)"
+        }
+      }
+    },
+    "focus": {
+      "width": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "2px"
+      },
+      "$description": "Every interactive control shows a solid 2px outline in theme.*.focusRing with a 2px offset on :focus-visible."
+    },
+    "state": {
+      "button": {
+        "hoverScale": {
+          "$type": "number",
+          "$value": 1.03
+        },
+        "activeScale": {
+          "$type": "number",
+          "$value": 0.98
+        },
+        "disabledOpacity": {
+          "$type": "number",
+          "$value": 0.4
+        },
+        "hoverReducedMotion": {
+          "$type": "color",
+          "$value": "#d11725",
+          "$description": "prefers-reduced-motion: no scale; primary fill steps to brand 600 (white text 5.44:1)"
+        },
+        "activeReducedMotion": {
+          "$type": "color",
+          "$value": "#b0141f",
+          "$description": "prefers-reduced-motion: pressed fill brand 700"
+        },
+        "duration": {
+          "$type": "duration",
+          "$value": "200ms"
+        }
+      },
+      "card": {
+        "hoverLift": {
+          "$type": "dimension",
+          "$value": "-2px",
+          "$description": "translateY on interactive glow cards; removed under reduced motion"
+        }
+      }
+    },
+    "control": {
+      "heightSm": {
+        "$type": "dimension",
+        "$value": "36px"
+      },
+      "height": {
+        "$type": "dimension",
+        "$value": "44px",
+        "$description": "Matches the 44px touch target"
+      },
+      "heightLg": {
+        "$type": "dimension",
+        "$value": "52px"
+      }
     }
   },
   "profiles": {
     "eventDisplay": {
-      "scope": "Derived recommendation for short, stacked Kanit Medium headlines on event covers and social graphics only",
-      "source": "Requester feedback on event-cover spacing, 2026-09-21",
-      "headlineLineHeight": {"$type": "number", "$value": 0.90, "$description": "Baseline distance divided by font size; optical starting point, not body-copy or inherited-template leading"}
+      "$description": "Derived recommendation for short, stacked Kanit Medium headlines on event covers and social graphics only. Source: requester feedback on event-cover spacing, 2026-09-21.",
+      "headlineLineHeight": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Baseline distance divided by font size; optical starting point, not body-copy or inherited-template leading"
+      }
     },
     "imageTitleSangeeth": {
-      "scope": "Compact Kanit titles inside image artwork following Sangeeth's designer treatment; not global typography or an inherited template rule",
-      "source": "Sangeeth, direct design guidance, 2026-09-29",
-      "fontFamily": {"$type": "fontFamily", "$value": "Kanit"},
-      "fontWeight": {"$type": "fontWeight", "$value": 600, "$description": "Semibold for titles"},
-      "lineHeight": {"$type": "number", "$value": 0.77, "$description": "77% of font size; inspect the final image for clipping and glyph collisions"},
-      "letterSpacing": {"$type": "dimension", "$value": "-0.04em", "$description": "-4% tracking in the design editor; inspect the final export"}
+      "$description": "Compact Kanit titles inside image artwork following Sangeeth's designer treatment; not global typography or an inherited template rule. Source: Sangeeth, direct design guidance, 2026-09-29.",
+      "fontFamily": {
+        "$type": "fontFamily",
+        "$value": "Kanit"
+      },
+      "fontWeight": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Semibold for titles"
+      },
+      "lineHeight": {
+        "$type": "number",
+        "$value": 0.77,
+        "$description": "77% of font size; inspect the final image for clipping and glyph collisions"
+      },
+      "letterSpacing": {
+        "$type": "dimension",
+        "$value": "-0.04em",
+        "$description": "-4% tracking in the design editor; inspect the final export"
+      }
     },
     "presentationCurrent": {
-      "scope": "Only inside the current inherited presentation master",
-      "source": "Team1 presentation master, 2026-08-03",
-      "aspectRatio": "16:9", "exemplarSlides": 40, "masters": 1, "packagedLayouts": 20,
-      "typography": ["Inter", "Inter SemiBold", "Inter ExtraBold", "Kanit Medium", "Helvetica Neue"],
-      "inheritedColors": ["#E84142", "#F5384B", "#161618", "#F5F5F9", "#3055B3", "#348BFF"],
-      "rule": "Preserve inherited styles; do not export these values as global identity tokens"
+      "$description": "Only inside the current inherited presentation master (2026-08-03). Preserve inherited styles; do not export these values as global identity tokens. Unchanged in 3.0.0.",
+      "$extensions": {
+        "network.team1": {
+          "aspectRatio": "16:9",
+          "exemplarSlides": 40,
+          "masters": 1,
+          "packagedLayouts": 20,
+          "typography": [
+            "Inter",
+            "Inter SemiBold",
+            "Inter ExtraBold",
+            "Kanit Medium",
+            "Helvetica Neue"
+          ],
+          "inheritedColors": [
+            "#E84142",
+            "#F5384B",
+            "#161618",
+            "#F5F5F9",
+            "#3055B3",
+            "#348BFF"
+          ]
+        }
+      }
     },
-    "chapter": {"font": "Aeonik Black", "case": "ALL CAPS in the chapter construction only", "canvas": "3000x3000px", "typeSize": "344px", "spacing": "788.5px", "colorRule": "approved primary national flag colors"},
-    "video": {"captionFont": "Aeonik Medium", "captionSize": 57, "captionColor": "#FFFFFF", "shadow": "black 100%, 135deg, distance 3, blur 6, spread 12", "position": "bottom center, x 0, y -106"},
-    "blog": {"background": "#3055B3", "fontOptions": ["Neuropol X", "Inter"], "text": "#FFFFFF", "redUse": "logo, icons, callouts only"}
-  },
-  "retired": {
-    "#FF394A": "Retired Team1 red; historical v1 content signal only",
-    "#E84142": "Not Team1 primary; Avalanche-origin or inherited presentation context only"
+    "chapter": {
+      "$description": "Chapter-mark construction only.",
+      "$extensions": {
+        "network.team1": {
+          "font": "Aeonik Black",
+          "case": "ALL CAPS in the chapter construction only",
+          "canvas": "3000x3000px",
+          "typeSize": "344px",
+          "spacing": "788.5px",
+          "colorRule": "approved primary national flag colors"
+        }
+      }
+    },
+    "video": {
+      "$description": "Video captions only.",
+      "$extensions": {
+        "network.team1": {
+          "captionFont": "Aeonik Medium",
+          "captionSize": 57,
+          "captionColor": "#FFFFFF",
+          "shadow": "black 100%, 135deg, distance 3, blur 6, spread 12",
+          "position": "bottom center, x 0, y -106"
+        }
+      }
+    },
+    "blog": {
+      "$description": "Blog artwork profile only.",
+      "$extensions": {
+        "network.team1": {
+          "background": "#3055B3",
+          "fontOptions": [
+            "Neuropol X",
+            "Inter"
+          ],
+          "text": "#FFFFFF",
+          "redUse": "logo, icons, callouts only"
+        }
+      }
+    }
   }
 }
