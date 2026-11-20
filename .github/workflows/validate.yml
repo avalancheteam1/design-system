@@ -30,5 +30,36 @@ jobs:
       - name: Validate the installable skill package
         run: python3 team1-design-system/scripts/validate_package.py team1-design-system
 
+      - name: Check generated tokens and contrast audit
+        run: |
+          python3 team1-design-system/scripts/build_tokens.py --check
+          python3 team1-design-system/scripts/contrast_audit.py --check
+
       - name: Run repository tests
         run: python3 -m unittest discover -s tests -p 'test_*.py' -v
+
+  web:
+    name: Typecheck and build web components
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck, preview and registry builds
+        run: |
+          npm run typecheck
+          npm run preview:build
+          npm run registry:build
