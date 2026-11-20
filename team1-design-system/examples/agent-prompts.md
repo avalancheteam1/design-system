@@ -8,7 +8,9 @@ Replace bracketed fields with verified information. Attach the complete skill fo
 
 ## Website
 
-> Use the `team1-design-system` skill to specify and review a responsive Team1 chapter site. Apply the current global identity, official favicon set, dark-default/light tokens, semantic status colors, keyboard/focus/reduced-motion rules, 1200×630 OG image, and the governance launch gate. Verify the live form destination before completion.
+> Use the `team1-design-system` skill to specify and review a responsive Team1 chapter site. Apply the current global identity, official favicon set, the 3.0.0 web core (generated tokens, Kanit headings with Inter body, pill buttons, glow and quiet cards, Lucide icons, red as the only accent), dark-default/light tokens, semantic status colors, keyboard/focus/reduced-motion rules, 1200×630 OG image, and the governance launch gate. Verify the live form destination before completion.
+
+> Use the `team1-design-system` skill to migrate [site] to the 3.0.0 web core. Follow `references/web-core-and-migration.md` for that site, replace hard-coded colors with tokens, keep its approved extension layer, and show before/after screenshots of every button and card state in both themes and with reduced motion.
 
 ## Event kit
 

@@ -1,0 +1,41 @@
+{
+  "name": "@team1/design-system",
+  "version": "3.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Team1 Design System 3.0.0: brand book skill, web tokens, React components, shadcn registry and preview",
+  "scripts": {
+    "tokens:build": "python3 team1-design-system/scripts/build_tokens.py team1-design-system",
+    "tokens:check": "python3 team1-design-system/scripts/build_tokens.py team1-design-system --check",
+    "contrast": "python3 team1-design-system/scripts/contrast_audit.py team1-design-system",
+    "typecheck": "tsc --noEmit",
+    "preview:build": "vite build team1-design-system/preview --outDir ../../build/preview",
+    "preview:serve": "vite preview team1-design-system/preview --outDir ../../build/preview --port 4173",
+    "registry:build": "cd team1-design-system && shadcn build registry.json --output ../build/registry",
+    "package:checksums": "python3 team1-design-system/scripts/update_checksums.py team1-design-system",
+    "validate": "python3 team1-design-system/scripts/validate_package.py team1-design-system && python3 -m unittest discover -s tests -v",
+    "build": "npm run tokens:check && npm run contrast && npm run typecheck && npm run preview:build && npm run registry:build"
+  },
+  "devDependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource/kanit": "^5.3.0",
+    "@tailwindcss/vite": "^4.1.17",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.1",
+    "shadcn": "^3.5.0",
+    "tailwindcss": "^4.1.17",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  },
+  "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.554.0",
+    "radix-ui": "^1.4.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "tailwind-merge": "^3.4.0"
+  }
+}

@@ -9,6 +9,12 @@ from urllib.parse import unquote
 REPO_ROOT = Path(__file__).resolve().parents[1]
 SKILL_ROOT = REPO_ROOT / "team1-design-system"
 MARKDOWN_LINK = re.compile(r"\[[^\]]+\]\(([^)]+)\)")
+# Local tooling output and dependencies are not repository content.
+IGNORED_PARTS = {".git", "node_modules", "build"}
+
+
+def ignored(path):
+    return bool(IGNORED_PARTS.intersection(path.relative_to(REPO_ROOT).parts))
 
 
 class RepositoryTests(unittest.TestCase):
@@ -54,9 +60,16 @@ class RepositoryTests(unittest.TestCase):
     def test_release_metadata_uses_publication_date(self):
         manifest = json.loads((SKILL_ROOT / "manifest.json").read_text(encoding="utf-8"))
         changelog = (SKILL_ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
-        self.assertEqual("2.2.0", manifest["version"])
-        self.assertEqual("2026-09-29", manifest["released"])
+        self.assertEqual("3.0.0", manifest["version"])
+        self.assertEqual("2026-11-20", manifest["released"])
+        self.assertIn("3.0.0 — 2026-11-20", changelog)
         self.assertIn("2.2.0 — 2026-09-29", changelog)
+        for section in ("### Breaking changes", "### Added", "### Changed", "### Removed", "### Fixed", "### Migration"):
+            self.assertIn(section, changelog)
+        package = json.loads((REPO_ROOT / "package.json").read_text(encoding="utf-8"))
+        tokens = json.loads((SKILL_ROOT / "tokens" / "design-tokens.json").read_text(encoding="utf-8"))
+        self.assertEqual(manifest["version"], package["version"])
+        self.assertEqual(manifest["version"], tokens["$extensions"]["network.team1"]["version"])
         self.assertTrue(manifest["portable"])
         resources = manifest["canonicalResources"]
         for relative in resources.values():
@@ -68,7 +81,8 @@ class RepositoryTests(unittest.TestCase):
         self.assertEqual(600, profile["fontWeight"]["$value"])
         self.assertEqual(0.77, profile["lineHeight"]["$value"])
         self.assertEqual("-0.04em", profile["letterSpacing"]["$value"])
-        self.assertEqual(500, tokens["global"]["typography"]["heading"]["weight"])
+        self.assertEqual(500, tokens["global"]["typography"]["heading"]["weight"]["$value"])
+        self.assertEqual(500, tokens["web"]["typography"]["heading"]["weight"]["$value"])
         self.assertEqual(0.90, tokens["profiles"]["eventDisplay"]["headlineLineHeight"]["$value"])
 
     def test_skill_directory_name_matches_frontmatter(self):
@@ -80,7 +94,7 @@ class RepositoryTests(unittest.TestCase):
     def test_local_markdown_links_resolve(self):
         failures = []
         for document in REPO_ROOT.rglob("*.md"):
-            if ".git" in document.parts:
+            if ignored(document):
                 continue
             for raw_target in MARKDOWN_LINK.findall(document.read_text(encoding="utf-8")):
                 target = unquote(raw_target.strip().strip("<>").split("#", 1)[0])
@@ -95,7 +109,7 @@ class RepositoryTests(unittest.TestCase):
         limit = 100 * 1024 * 1024
         oversized = []
         for path in REPO_ROOT.rglob("*"):
-            if not path.is_file() or ".git" in path.parts:
+            if not path.is_file() or ignored(path):
                 continue
             if path.stat().st_size >= limit:
                 oversized.append(str(path.relative_to(REPO_ROOT)))
@@ -105,7 +119,7 @@ class RepositoryTests(unittest.TestCase):
         archives = [
             str(path.relative_to(REPO_ROOT))
             for path in REPO_ROOT.rglob("*.zip")
-            if ".git" not in path.parts
+            if not ignored(path)
         ]
         self.assertEqual([], archives)
 
@@ -165,16 +179,22 @@ class RepositoryTests(unittest.TestCase):
             "400ms",
         ):
             self.assertIn(value, serialized)
-        self.assertEqual("16px", tokens["global"]["radius"]["projectLogo"])
+        self.assertNotIn("radius", tokens["global"])
         self.assertEqual(
-            "#E6212F", tokens["global"]["color"]["dark"]["textBrand"]["$value"]
+            {"xs": "6px", "sm": "12px", "lg": "20px", "full": "9999px"},
+            {k: v["$value"] for k, v in tokens["web"]["radius"].items() if not k.startswith("$")},
+        )
+        self.assertEqual("#E6212F", tokens["global"]["color"]["brand"]["primary"]["$value"])
+        self.assertEqual("#E6212F", tokens["global"]["color"]["brand"]["scale"]["500"]["$value"])
+        self.assertEqual(
+            "#EC5A64", tokens["global"]["color"]["dark"]["textBrand"]["$value"]
         )
         self.assertEqual(
             "#FFFFFF",
             tokens["global"]["color"]["dark"]["textHighContrast"]["$value"],
         )
         self.assertEqual(
-            "#E6212F", tokens["global"]["color"]["light"]["textBrand"]["$value"]
+            "#d11725", tokens["global"]["color"]["light"]["textBrand"]["$value"]
         )
         self.assertEqual(
             "#161617",
@@ -190,18 +210,26 @@ class RepositoryTests(unittest.TestCase):
             "--team1-space-1-5: 6px",
             "--team1-space-3-5: 14px",
             "--team1-space-20: 80px",
-            "--team1-radius-project-logo: 16px",
-            "--team1-radius-pill: 9999px",
+            "--team1-radius-sm: 12px",
+            "--team1-radius-lg: 20px",
+            "--team1-radius-full: 9999px",
+            "--team1-radius-pill: var(--team1-radius-full)",
             "--team1-z-tooltip: 90",
             "--team1-breakpoint-2xl: 1536px",
             "--team1-motion-entrance: 400ms cubic-bezier(0.16, 1, 0.3, 1)",
-            "--team1-heading-h1-desktop: 36px",
-            "--team1-heading-h1-mobile: 30px",
-            "--team1-body-size: 16px",
+            "--team1-font-size-h1-desktop: 36px",
+            "--team1-font-size-h1-mobile: 30px",
+            "--team1-font-size-body: 16px",
+            "--team1-heading-h1-desktop: var(--team1-font-size-h1-desktop)",
+            "--team1-body-size: var(--team1-font-size-body)",
             "--team1-font-weight-heading: 500",
-            "--team1-page-padding-desktop: 24px",
-            "--team1-page-padding-mobile: 16px",
+            "--team1-padding-desktop: 24px",
+            "--team1-padding-mobile: 16px",
             "--team1-light-surface-hover: #d8d9dc",
+            "--team1-focus-width: 2px",
+            "--team1-button-hover-scale: 1.03",
+            "--team1-button-active-scale: 0.98",
+            "--team1-button-disabled-opacity: 0.4",
             "--team1-light-shadow",
             "--team1-ava-blue-hover: #264496",
         ):
@@ -408,6 +436,65 @@ class RepositoryTests(unittest.TestCase):
                             value,
                             (b"", b"Team1 Design System", b"Walnut Exporter"),
                         )
+
+
+    def test_web_tokens_follow_3_0_decisions(self):
+        tokens = json.loads((SKILL_ROOT / "tokens" / "design-tokens.json").read_text(encoding="utf-8"))
+        web = tokens["web"]
+        self.assertIn("Inter", web["typography"]["body"]["family"]["$value"])
+        self.assertIn("Kanit", web["typography"]["heading"]["family"]["$value"])
+        self.assertIn("JetBrains Mono", web["typography"]["mono"]["family"]["$value"])
+        self.assertEqual(300, web["typography"]["body"]["weightLongForm"]["$value"])
+        self.assertEqual(400, web["typography"]["body"]["weightUi"]["$value"])
+        dark, light = web["theme"]["dark"], web["theme"]["light"]
+        self.assertEqual("#000000", dark["background"]["$value"])
+        self.assertEqual("#161617", dark["surface"]["$value"])
+        self.assertEqual("#FFFFFF", light["background"]["$value"])
+        self.assertEqual("#F5F5F9", light["surface"]["$value"])
+        self.assertTrue(dark["border"]["$value"].startswith("rgba(255, 255, 255"))
+        serialized = json.dumps(web).upper()
+        for retired in ("#E84142", "#FF394A", "#E02D3D", "#3055B3", "#058AFF", "AEONIK"):
+            self.assertNotIn(retired, serialized)
+        state = web["state"]["button"]
+        self.assertEqual(1.03, state["hoverScale"]["$value"])
+        self.assertEqual(0.98, state["activeScale"]["$value"])
+        self.assertEqual(0.4, state["disabledOpacity"]["$value"])
+
+    def test_generated_token_files_and_contrast_audit_are_current(self):
+        import subprocess, sys
+        for script in ("build_tokens.py", "contrast_audit.py"):
+            result = subprocess.run(
+                [sys.executable, str(SKILL_ROOT / "scripts" / script), "--check"],
+                capture_output=True, text=True,
+            )
+            self.assertEqual(0, result.returncode, result.stdout + result.stderr)
+        audit = (SKILL_ROOT / "tokens" / "CONTRAST.md").read_text(encoding="utf-8")
+        self.assertIn("No required pair fails.", audit)
+        theme = (SKILL_ROOT / "tokens" / "tailwind-theme.css").read_text(encoding="utf-8")
+        for value in ("@theme {", "--color-*: initial;", "--radius-*: initial;", "@custom-variant theme-light"):
+            self.assertIn(value, theme)
+
+    def test_web_components_and_registry_are_complete(self):
+        expected = {
+            "ui": {"button", "input", "textarea", "label", "select", "checkbox", "switch", "badge",
+                   "card", "tabs", "dialog", "tooltip", "table", "alert"},
+            "layout": {"logo", "site-header", "site-footer", "theme-toggle"},
+        }
+        for folder, names in expected.items():
+            found = {p.stem for p in (SKILL_ROOT / "components" / folder).glob("*.tsx")}
+            self.assertEqual(names, found)
+        registry = json.loads((SKILL_ROOT / "registry.json").read_text(encoding="utf-8"))
+        self.assertEqual("https://ui.shadcn.com/schema/registry.json", registry["$schema"])
+        for item in registry["items"]:
+            for entry in item["files"]:
+                self.assertTrue((SKILL_ROOT / entry["path"]).is_file(), entry["path"])
+        button = (SKILL_ROOT / "components" / "ui" / "button.tsx").read_text(encoding="utf-8")
+        for value in ("rounded-full", "motion-safe:hover:scale-[1.03]", "motion-reduce:hover:bg-brand-600",
+                      "focus-visible:outline-2", "disabled:opacity-40"):
+            self.assertIn(value, button)
+        sources = "".join(p.read_text(encoding="utf-8") for p in (SKILL_ROOT / "components").rglob("*.tsx"))
+        for forbidden in ("@heroicons", "phosphor", "react-icons", "#E84142", "#FF394A"):
+            self.assertNotIn(forbidden.lower(), sources.lower())
 
 
 if __name__ == "__main__":

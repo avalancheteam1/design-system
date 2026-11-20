@@ -53,6 +53,15 @@ An asset appearing in an older Team1 deck proves provenance, not automatically c
 
 Run from the repository root:
 
+For token changes, edit only `tokens/design-tokens.json`, then regenerate:
+
+```sh
+python3 team1-design-system/scripts/build_tokens.py
+python3 team1-design-system/scripts/contrast_audit.py
+```
+
+For component or preview changes, install the optional Node tooling once with `npm ci` at the repository root, then run `npm run typecheck`, `npm run preview:build` and `npm run registry:build`. Build output goes to `build/` and `node_modules/`, which are ignored and never packaged.
+
 ```sh
 python3 team1-design-system/scripts/update_checksums.py team1-design-system
 python3 team1-design-system/scripts/validate_package.py team1-design-system
@@ -68,6 +77,8 @@ For visual changes, also follow the complete [governance and delivery QA](team1-
 Repository maintainers own version numbers, tags, and release publication. A release should keep these values aligned:
 
 - `SKILL.md` metadata version;
+- root `package.json` version;
+- the `version` in `tokens/design-tokens.json` `$extensions`;
 - `manifest.json` version and release date;
 - `CHANGELOG.md` entry;
 - `checksums.sha256`;

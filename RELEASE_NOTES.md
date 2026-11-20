@@ -1,3 +1,17 @@
+# Team1 Design System 3.0.0
+
+This private major release adds the Team1 web and product design system to the brand book, following Giacomo Barbieri's decisions of 20 November 2026.
+
+- One canonical W3C token file now generates `design-tokens.css` (dark default, light option, OS fallback only without an explicit choice) and a Tailwind 4 theme.
+- shadcn-compatible React components (Button, Input, Textarea, Select, Checkbox, Switch, Badge, Card, Tabs, Dialog, Tooltip, Table, Alert, header, footer, logo, theme toggle) with a shadcn registry and a preview of every state in both themes.
+- Breaking for websites: Inter body (Kanit 500 headings stay), pill buttons, radius pill/12/20, new hover/pressed/focus states with a reduced-motion fallback, red as the only UI accent, AA-safe red text roles, and `#E84142`/`#FF394A`/`#E02D3D` replaced by tokens. 2.x CSS variable names keep working as deprecated aliases until 4.0.0.
+- A generated contrast audit (`tokens/CONTRAST.md`); every body-text pair passes WCAG AA.
+- Per-site migration notes for www, hub, cascade, events, india, turkiye, seedsprint and members.
+
+Presentation templates, identity assets, chapter vectors and the print, social and video rules are unchanged. The release contains no font files. Download `team1-design-system-v3.0.0.zip` and verify its accompanying SHA-256 file. The ZIP contains one top-level `team1-design-system/` folder. See the [changelog](team1-design-system/CHANGELOG.md) for the full list and the migration steps.
+
+---
+
 # Team1 Design System 2.2.0
 
 This private minor release adds a compact image-title profile from Sangeeth's 29 September design guidance: Kanit Semibold 600, 77% line height and −4% letter spacing. It also packages the previously reviewed 0.90 Kanit Medium event-cover leading recommendation. Use the 77% treatment for titles inside images when following Sangeeth's style; it does not change the global Kanit Medium heading rule, inherited presentation layouts, or claim Cem uses identical settings.

@@ -1,0 +1,20 @@
+@import "tailwindcss";
+@import "../../tokens/design-tokens.css";
+@import "../../tokens/tailwind-theme.css";
+@import "@fontsource/kanit/500.css";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+@source "../../components";
+
+/* Preview only: let specimens pin a state with data-preview-state="hover|active|focus" so every state is visible at once.
+   Real pages never set this attribute; the components keep their normal :hover/:active/:focus-visible behaviour. */
+@custom-variant hover (&:hover, &[data-preview-state~="hover"]);
+@custom-variant active (&:active, &[data-preview-state~="active"]);
+@custom-variant focus-visible (&:focus-visible, &[data-preview-state~="focus"]);
+
+:root {
+  --font-inter-name: "Inter Variable";
+  --team1-font-body: "Inter Variable", Inter, ui-sans-serif, system-ui, sans-serif;
+  --team1-font-mono: "JetBrains Mono Variable", "JetBrains Mono", ui-monospace, monospace;
+}

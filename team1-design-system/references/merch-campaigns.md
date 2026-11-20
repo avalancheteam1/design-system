@@ -20,7 +20,7 @@ An instruction such as “text 50% smaller” or “waves 75% bigger” applies 
 
 Use short, locally meaningful builder humor: a Roman phrase or historical contrast for Rome; sand, sea and shipping code for a beach hackathon. Keep one dominant message. Dates, venues, prize amounts and administrative copy belong on event collateral unless specifically requested on the collectible.
 
-Global headings remain Kanit Medium 500 and body Kanit Light 300. For an explicitly approved heavy merchandise campaign, Kanit Bold outlines are an available **campaign treatment**, as used in the Blockchain Beach production reconstruction. Aeonik remains a controlled alternative with verified access and licensing. Neither treatment changes global tokens or allows rebuilding a logo from type. If reconstructing a generated mockup, disclose the font substitution and review the actual vector proof.
+Global headings remain Kanit Medium 500 and print/merchandise body Kanit Light 300 (the 3.0.0 Inter body applies to web and product UI only). For an explicitly approved heavy merchandise campaign, Kanit Bold outlines are an available **campaign treatment**, as used in the Blockchain Beach production reconstruction. Aeonik remains a controlled alternative with verified access and licensing. Neither treatment changes global tokens or allows rebuilding a logo from type. If reconstructing a generated mockup, disclose the font substitution and review the actual vector proof.
 
 ## Illustration and palette
 
