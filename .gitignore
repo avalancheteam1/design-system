@@ -32,3 +32,6 @@ venv/
 /release/
 /releases/
 /*.zip
+
+# Node tooling (3.0.0 web package)
+node_modules/

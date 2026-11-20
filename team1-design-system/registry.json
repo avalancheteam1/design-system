@@ -1,0 +1,400 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "team1",
+  "homepage": "https://github.com/avalancheteam1/design-system",
+  "items": [
+    {
+      "name": "team1-theme",
+      "type": "registry:style",
+      "title": "Team1 theme tokens",
+      "description": "Team1 3.0.0 design tokens: CSS custom properties (dark default, light option) and the Tailwind 4 @theme mapping. Import both after `@import \"tailwindcss\"`. Fonts are not shipped: load Kanit 500, Inter and JetBrains Mono from an authorized source.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "tokens/design-tokens.css",
+          "type": "registry:file",
+          "target": "styles/team1/design-tokens.css"
+        },
+        {
+          "path": "tokens/tailwind-theme.css",
+          "type": "registry:file",
+          "target": "styles/team1/tailwind-theme.css"
+        }
+      ]
+    },
+    {
+      "name": "utils",
+      "type": "registry:lib",
+      "title": "cn() with Team1 tailwind-merge config",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge"
+      ],
+      "files": [
+        {
+          "path": "lib/utils.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "theme",
+      "type": "registry:lib",
+      "title": "Theme helpers (dark default, explicit light, OS fallback)",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "lib/theme.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "Alert",
+      "description": "Alert: neutral info, success, warning, error.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Pill badges: brand, solid, neutral, outline, success, warning, error.",
+      "dependencies": [
+        "class-variance-authority",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Pill button: primary, secondary, ghost, destructive, link; sm/default/lg/icon sizes; loading state; reduced-motion colour steps.",
+      "dependencies": [
+        "class-variance-authority",
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "Card",
+      "description": "Card with glow (default) and quiet (dense list) variants, optional interactive hover.",
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "Checkbox",
+      "description": "18px checkbox, 6px radius, red when checked.",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "Dialog",
+      "description": "20px-radius modal dialog with blurred overlay.",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "12px-radius text field with 3:1 border, visible focus and aria-invalid state.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "Label",
+      "description": "Form label (Inter 400/500).",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "Select",
+      "description": "Radix select with 12px trigger and menu.",
+      "dependencies": [
+        "lucide-react",
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme",
+        "@team1/input"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "Switch",
+      "description": "Pill switch, red when on.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "Table",
+      "description": "Data table in a 20px frame.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "Tabs",
+      "description": "Pill tabs.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "Textarea",
+      "description": "Multi-line field sharing the input styles.",
+      "dependencies": [],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme",
+        "@team1/input"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "Tooltip",
+      "description": "12px tooltip.",
+      "dependencies": [
+        "radix-ui"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:component",
+      "title": "Logo",
+      "description": "Authentic Team1 wordmark swap for dark/light themes (pass the official SVG files).",
+      "dependencies": [],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme"
+      ],
+      "files": [
+        {
+          "path": "components/layout/logo.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "site-footer",
+      "type": "registry:component",
+      "title": "Site Footer",
+      "description": "Hub-style footer with 'Keep building.' and link columns.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme",
+        "@team1/logo"
+      ],
+      "files": [
+        {
+          "path": "components/layout/site-footer.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "site-header",
+      "type": "registry:component",
+      "title": "Site Header",
+      "description": "Sticky site header with nav, actions and mobile menu.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme",
+        "@team1/button",
+        "@team1/logo"
+      ],
+      "files": [
+        {
+          "path": "components/layout/site-header.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "theme-toggle",
+      "type": "registry:component",
+      "title": "Theme Toggle",
+      "description": "Dark/light toggle using lib/theme.",
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@team1/utils",
+        "@team1/team1-theme",
+        "@team1/button",
+        "@team1/theme"
+      ],
+      "files": [
+        {
+          "path": "components/layout/theme-toggle.tsx",
+          "type": "registry:component"
+        }
+      ]
+    }
+  ]
+}
