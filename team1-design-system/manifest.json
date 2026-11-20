@@ -2,8 +2,8 @@
   "schemaVersion": "2",
   "id": "team1-design-system",
   "name": "Team1 Design System",
-  "version": "2.2.0",
-  "released": "2026-09-29",
+  "version": "3.0.0",
+  "released": "2026-11-20",
   "entrypoint": "SKILL.md",
   "format": "https://agentskills.io/specification",
   "portable": true,
@@ -11,12 +11,14 @@
   "authoritySnapshot": {
     "globalBrand": "2026-07-03",
     "presentationMaster": "2026-08-03",
-    "driveAudit": "2026-08-12"
+    "driveAudit": "2026-08-12",
+    "webDecisions": "2026-11-20"
   },
   "compatibility": ["Codex", "ChatGPT", "Claude Code", "OpenClaw", "Hermes Agent", "Agent Skills clients"],
   "capabilities": [
     "presentations",
     "web-and-product",
+    "web-components",
     "event-collateral",
     "regional-localization",
     "social-and-editorial",
@@ -32,7 +34,12 @@
     "editablePresentation": "templates/Team1 Current Presentation Template.pptx",
     "visualReference": "templates/Team1 Current Presentation Template.pdf",
     "qualityGate": "references/governance-and-qa.md",
-    "merchCampaigns": "references/merch-campaigns.md"
+    "merchCampaigns": "references/merch-campaigns.md",
+    "webCore": "references/web-core-and-migration.md",
+    "tokensCss": "tokens/design-tokens.css",
+    "tailwindTheme": "tokens/tailwind-theme.css",
+    "contrastAudit": "tokens/CONTRAST.md",
+    "componentRegistry": "registry.json"
   },
   "networkRequired": false,
   "containsExecutableInstaller": false,
