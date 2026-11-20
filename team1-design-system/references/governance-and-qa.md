@@ -20,11 +20,13 @@ Assign a content owner, design owner, implementation/production owner, and final
 - Approved marks retain their file, proportions, clear space, lowercase `t`, and intended background variant.
 - `Team1`/`team1` usage is intentional; `TEAM1` fails.
 - Medium-specific typography and color exceptions stay inside their documented scope.
+- Web and product UI (3.0.0): Kanit 500 headings, Inter body (300 long-form, 400 UI), JetBrains Mono metadata; red is the only UI accent; pill buttons, 12 px fields, 20 px cards; Lucide icons only; no `#E84142`, `#FF394A` or hard-coded hex values where a token exists. A blue, purple, green or yellow UI accent, a non-Lucide icon family, or an off-scale radius is a `FAIL` unless a scoped exception is recorded.
 - Team1 is primary in Team1-led work; partner marks have optical parity and an approved relationship.
 
 ## Functional and accessibility review
 
 - Inspect hierarchy, contrast, reading order, keyboard access, focus, alt text/captions, motion preference, touch size, responsive behavior, and error states where applicable.
+- For web work, check every interactive state in both themes: hover, pressed, keyboard focus (2 px outline visible on every control), disabled, loading and error, and repeat with `prefers-reduced-motion: reduce` (no scale or lift, colour steps instead). Body text pairs must meet 4.5:1 and field boundaries 3:1; `tokens/CONTRAST.md` covers the token pairs, but custom backgrounds and imagery need their own check.
 - Render every output at its final dimensions. Check overflow, clipping, substitution, image crop, compression, color, and platform UI/safe areas.
 - Test links and QR codes from the final export and their real viewing distance. Pair QR with a visible fallback.
 - For presentations, inspect every slide plus the contact sheet and test the target app/hardware.

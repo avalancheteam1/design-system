@@ -18,7 +18,7 @@ Team1 communication is helpful, respectful, accurate, warm, community-first, and
 
 ## Calls to action
 
-Use a direct verb and name the destination: “Register for the meetup,” “Read the guide,” or “Join the community.” Pair every QR with visible destination/action text. Do not publish an action until its URL, owner, privacy context, availability, and expiry are verified.
+Use a direct verb and name the destination: “Register for the meetup,” “Read the guide,” or “Join the community.” In interfaces, button labels use sentence case and say what happens (“Submit project,” not “OK” or “Submit”); keep them to about three words so the pill does not wrap. A destructive action names what is lost (“Delete draft”). A loading label may keep its text while the spinner shows; do not swap it for “Loading…” unless the state lasts more than a few seconds. Error messages say what went wrong and how to fix it, next to the field, without blaming the reader. Pair every QR with visible destination/action text. Do not publish an action until its URL, owner, privacy context, availability, and expiry are verified.
 
 ## Localization and controlled terms
 

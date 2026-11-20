@@ -4,10 +4,12 @@ This private package supports authorized Team1 community work. It does not creat
 
 Team1, Avalanche, chapter, program, event, and partner marks remain the property of their owners. Use authentic assets without alteration and only in an approved context. Access to this repository does not by itself authorize public redistribution.
 
-No font binaries are redistributed. Font names and settings are specifications only. Obtain Kanit, Aeonik, Inter, Neuropol X, Helvetica Neue, or any substitute from an authorized source and retain its license. Aeonik and Neuropol X require particular licensing care.
+No font binaries are redistributed. Font names and settings are specifications only. Obtain Kanit, Inter, JetBrains Mono, Aeonik, Neuropol X, Helvetica Neue, or any substitute from an authorized source and retain its license. Kanit, Inter and JetBrains Mono are published under the SIL Open Font License; the web preview installs them as development-only npm packages that are not part of this package. Aeonik and Neuropol X require particular licensing care.
 
 The package excludes participant/member media and personal data. Any externally supplied photo, video, voice, testimonial, application, attendance record, or headshot requires a documented source, permission/consent, intended channels, territory, expiry, and privacy review.
 
 No QR payload is bundled as a reusable destination. Verify the approved URL, privacy context, owner, tracking, and expiry; include a visible fallback; scan the final export or physical proof.
 
 Chapter status, metrics, dates, links, handles, program names, event details, partners, sponsors, and calls to action are time-sensitive. Verify them at publication time. A successful test or merged change is not brand, rights, partner, or publication approval.
+
+The React components and scripts are provided for authorized Team1 web work. They depend on open-source packages (React, Radix UI, class-variance-authority, clsx, tailwind-merge, Lucide) under their own licenses; parts follow the API of shadcn/ui (MIT) and the public `avalancheteam1/ecosystem-hub` repository (BSD-3-Clause).

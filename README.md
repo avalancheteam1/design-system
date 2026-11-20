@@ -1,6 +1,6 @@
 # Team1 Design System
 
-The shared Team1 visual system for people and AI agents. It includes authentic assets, reusable presentation frames, machine-readable tokens, practical brand guidance, and one portable Agent Skill that works across supported agent harnesses.
+The shared Team1 visual system for people and AI agents. It includes authentic assets, reusable presentation frames, machine-readable tokens, practical brand guidance, and one portable Agent Skill that works across supported agent harnesses. Version 3.0.0 adds the Team1 web design system: tokens that generate CSS and a Tailwind 4 theme, shadcn-compatible React components and registry, a preview, and a contrast audit.
 
 ![Current Team1 presentation master contact sheet](team1-design-system/previews/current-presentation-master-contact-sheet.png)
 
@@ -44,7 +44,9 @@ Exact paths, commands, verification steps, and the universal fallback are in the
 - [Governance and QA](team1-design-system/references/governance-and-qa.md) — factual, visual, accessibility, rights, functional, export, and go-live checks.
 - [Photography and video](team1-design-system/references/photography-and-video.md) and [voice and copy](team1-design-system/references/voice-and-copy.md) — consent-aware production and plain-language editorial rules.
 - [Asset index](team1-design-system/assets/asset-index.json) — provenance, role, and status for each bundled asset.
-- [Design tokens](team1-design-system/tokens/design-tokens.json) — canonical machine-readable colors and typography roles.
+- [Design tokens](team1-design-system/tokens/design-tokens.json) — canonical machine-readable colors, typography roles and web theme; generated [CSS](team1-design-system/tokens/design-tokens.css), [Tailwind 4 theme](team1-design-system/tokens/tailwind-theme.css) and [contrast audit](team1-design-system/tokens/CONTRAST.md).
+- [Web core and site migration](team1-design-system/references/web-core-and-migration.md) — what every Team1 site shares, what chapter and campaign sites may extend, and per-site migration notes.
+- [Components](team1-design-system/components/) and [registry](team1-design-system/registry.json) — shadcn-compatible React components for Team1 web properties, with a [preview](team1-design-system/preview/) and [QA screenshots](docs/qa/v3/).
 - Editable PowerPoint and read-only PDF references in [`templates/`](team1-design-system/templates/).
 - [Sanitized Drive source audit](docs/SOURCE_AUDIT_2026-08-12.md) — authority decisions, coverage, v1 gaps, and exclusions without member data.
 - [Clean-room evaluation](docs/EVALUATION_2026-08-12.md) — reproducible scenario method, baselines, frozen response hashes, and final v2 scores.
@@ -56,6 +58,13 @@ From the repository root:
 ```sh
 python3 team1-design-system/scripts/validate_package.py team1-design-system
 python3 -m unittest discover -s tests -v
+```
+
+The optional web tooling needs Node 20 or later:
+
+```sh
+npm ci
+npm run build        # tokens check, contrast audit, typecheck, preview and registry builds
 ```
 
 If you intentionally change any file inside the portable skill, refresh its checksum manifest only after the change is final, then validate again:

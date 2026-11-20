@@ -1,10 +1,10 @@
 # Team1 Design System Agent Skill
 
-Version 2.2.0 is a portable Team1 brand and production system for humans and AI agents. It combines the current global identity, official logo families, current chapter vectors, a current presentation master, machine-readable tokens, medium-specific rules, and output QA.
+Version 3.0.0 is a portable Team1 brand and production system for humans and AI agents. It combines the current global identity, official logo families, current chapter vectors, a current presentation master, machine-readable tokens, medium-specific rules, and output QA. From 3.0.0 it also carries the Team1 web design system: tokens that generate CSS variables and a Tailwind 4 theme, shadcn-compatible React components, a shadcn registry, a preview and a contrast audit.
 
 ## Quick start
 
-1. Download `team1-design-system-v2.2.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use this folder from an authorized checkout.
+1. Download `team1-design-system-v3.0.0.zip` from the [latest private release](https://github.com/avalancheteam1/design-system/releases/latest), or use this folder from an authorized checkout.
 2. Keep the complete directory named `team1-design-system`; `SKILL.md`, assets, tokens, templates, and references work together.
 3. Follow the [cross-harness guide](references/compatibility.md), start a fresh session, and say: “Use the team1-design-system skill to create…”
 4. Supply audience, locale, dimensions, deadline, approved copy/facts, links, photos, partner files, editable format, and final export.
@@ -27,20 +27,22 @@ Old decks, screenshots, archived folders, campaign files, regional examples, and
 
 - `SKILL.md` — compact agent workflow and hard rules.
 - `references/` — identity, web, presentation, social, event/print, regional, photo/video, copy, governance, provenance, and compatibility modules.
-- `tokens/` — global tokens plus explicitly scoped presentation, chapter, video, and blog profiles.
+- `tokens/` — global and web tokens plus explicitly scoped presentation, chapter, video, and blog profiles; generated `design-tokens.css` and `tailwind-theme.css`; `CONTRAST.md` audit.
+- `components/`, `lib/` and `registry.json` — shadcn-compatible React components (Button, Input, Textarea, Select, Checkbox, Switch, Badge, Card, Tabs, Dialog, Tooltip, Table, Alert, header, footer, logo, theme toggle) for Team1 web properties.
+- `preview/` — a Vite page showing every token and component in both themes and all states.
 - `assets/identity/` — current wordmark, symbol, square, PFP, and favicon families.
 - `assets/chapters/` — current verified chapter SVG module with provenance and usage gates.
 - `templates/Team1 Current Presentation Template.pptx` — editable current 40-exemplar master, sanitized to remove embedded font payloads.
 - `templates/Team1 Current Presentation Template.pdf` — read-only 40-page visual reference.
 - `previews/current-presentation-master-contact-sheet.png` — all 40 current exemplar slides for source-selection review.
 - `examples/` — prompts and production maps.
-- `scripts/` — offline validation and checksum maintenance.
+- `scripts/` — offline validation, checksum maintenance, token build (`build_tokens.py`) and contrast audit (`contrast_audit.py`). All standard-library Python.
 
 See the [photography/video](references/photography-and-video.md), [voice/copy](references/voice-and-copy.md), and [governance/QA](references/governance-and-qa.md) modules directly when those parts of a brief are in scope.
 
 ## Deliberately excluded
 
-No font binaries, participant/member photography, attendee data, recognition decks, live or archived QR payloads, partner logos, licensed music/SFX, raw video, stock libraries, campaign PSD/AI sources, legacy presentations with contextual media, private operational records, or archive/migration assets are redistributed. The system documents how to request and validate those materials safely.
+No font binaries (the preview loads fonts from development-only npm packages that are never packaged), participant/member photography, attendee data, recognition decks, live or archived QR payloads, partner logos, licensed music/SFX, raw video, stock libraries, campaign PSD/AI sources, legacy presentations with contextual media, private operational records, or archive/migration assets are redistributed. The system documents how to request and validate those materials safely.
 
 ## Validate
 
@@ -55,6 +57,21 @@ From the repository root:
 ```sh
 python3 team1-design-system/scripts/validate_package.py team1-design-system
 python3 -m unittest discover -s tests -p 'test_*.py' -v
+```
+
+After a token edit, regenerate the CSS and the contrast audit:
+
+```sh
+python3 team1-design-system/scripts/build_tokens.py
+python3 team1-design-system/scripts/contrast_audit.py
+```
+
+The optional Node tooling (React components, preview, registry) runs from the repository root after `npm ci`:
+
+```sh
+npm run typecheck
+npm run preview:build     # writes build/preview
+npm run registry:build    # writes build/registry
 ```
 
 After an approved package edit, refresh checksums last:

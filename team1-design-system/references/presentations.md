@@ -10,6 +10,8 @@ The canonical master is an inherited medium-specific system. Preserve its master
 
 The current presentation master is Inter-heavy and contains inherited `#E84142` presentation furniture. These are valid **inside that master only**. They do not replace the global Kanit/Ava Red system.
 
+3.0.0 leaves this module unchanged. The 3.0.0 web decisions (Inter body on web, pill buttons, the 12/20 px radius scale, the red text roles, glow cards and Lucide icons) apply to websites and product UI only. Do not carry them into the master: keep its inherited Inter treatments, `#E84142` furniture and slide geometry. The deck's Inter and the web's Inter are separate medium rules that happen to share a typeface; neither one changes the other.
+
 - When editing an inherited object, preserve its attached type and color unless the master itself is formally migrated.
 - For genuinely new objects outside the inherited furniture, use current global Ava Red `#E6212F` and the closest existing type treatment.
 - Never normalize all reds or fonts across an existing deck by search-and-replace.

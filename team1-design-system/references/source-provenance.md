@@ -9,6 +9,7 @@
 - Photography authority: the July 18, 2026 Team1 photography guide.
 - Event workflow authority: the July 30, 2026 Team1 event process.
 - Presentation construction authority: the August 3, 2026 current master with 40 exemplar slides, 20 inherited layout parts, and one master in the packaged font-clean PPTX.
+- Web and product UI authority (3.0.0): the decision record approved by Giacomo Barbieri on 2026-11-20 (Q1–Q13), see the 3.0.0 section below.
 
 The formal guide and Drive sources refine the common repository where they contain newer or medium-specific instructions. The rule hierarchy and exception boundary are recorded in `authority.md`.
 
@@ -35,7 +36,7 @@ Participant photos, headshots, member/contact data, applications, attendance rec
 
 ## Presentation inheritance
 
-The current presentation master is a medium-specific inherited system. Its Inter-heavy typography and `#E84142` furniture are preserved in place, but do not override global Kanit typography or Ava Red `#E6212F`. The earlier `Team1 Overview.pptx`—SHA-256 `8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0`—remains historical evidence rather than current authority and is not shipped in v2 because it contains contextual people, partner, and claim-bearing media.
+The current presentation master is a medium-specific inherited system. Its Inter-heavy typography and `#E84142` furniture are preserved in place, but do not override global Kanit headings, the web typography, or Ava Red `#E6212F`. The earlier `Team1 Overview.pptx`—SHA-256 `8af6803b1342e8c40ebc41fc5a382d21816c33bd329223c393731e1ef35ef4e0`—remains historical evidence rather than current authority and is not shipped in v2 because it contains contextual people, partner, and claim-bearing media.
 
 ## Time-sensitive content
 
@@ -57,3 +58,12 @@ The common repository HEAD was checked and remains `9d1b3d1a9d9e3e25414988560550
 ## 2.2.0 scoped review — 2026-09-29
 
 Sangeeth confirmed in a direct Telegram conversation on 29 September 2026 that his Kanit titles inside image artwork use 77% line height, −4% letter spacing and Semibold weight. He described Cem's work as similar but did not supply Cem's exact settings. The package records Sangeeth's treatment as a scoped image-title profile, while retaining the earlier derived 0.90 Kanit Medium event-cover starting point. The user requested this update and a minor release. The private `avalancheteam1/common` default branch was checked again on 29 September and remains `9d1b3d1a9d9e3e254149885605504c6dfd84ec54`. The current presentation master and other Drive sources were not re-audited for this typography-only release. No identity asset, template, global token or font binary changed.
+
+## 3.0.0 web review — 2026-11-20
+
+A read-only review of the public Team1 web properties (www, hub, cascade, events, india, turkiye, seedsprint and the public login page of members) was made on 20 November 2026 from public pages and the public `avalancheteam1/ecosystem-hub` repository, without logins. It measured computed styles, CSS custom properties, button states and axe-core results and found red drift (`#E84142`, `#FF394A`), an invisible 2.x hover and focus, failing red-text contrast, mixed radii, four icon families and extra accent colours. The findings and the per-site notes are summarized in `web-core-and-migration.md`.
+
+Giacomo Barbieri answered the resulting thirteen questions on the same day. Those answers are recorded in this package as a newer, explicitly approved Team1 source for web and product UI: Kanit 500 headings with Inter body (300 long-form, 400 UI) and JetBrains Mono metadata; pill buttons; radius pill/12/20; black `#000000` and `#161617` with neutral steps and translucent borders; dark-first with a light option; primary hover scale 1.03 with red glow, pressed 0.98, 2 px focus, 40 % disabled and a reduced-motion colour fallback; red as the only accent, error `#DC2626` distinct from brand red; glow cards by default with a quiet variant; Lucide icons; one shared core for chapter and campaign sites; one W3C token file generating CSS and a Tailwind 4 theme with shadcn-compatible components; replacement of `#E84142` and `#FF394A` and AA-safe red text.
+
+The private `avalancheteam1/common` repository was not re-read or changed for this release; its last recorded commit remains `9d1b3d1a9d9e3e254149885605504c6dfd84ec54`. Until `common` is updated, the 3.0.0 web rules take precedence for web and product UI only; identity assets, presentation masters and the non-web media rules are unchanged. The component code follows the shadcn/ui API and the BSD-3-Clause `ecosystem-hub` implementation (red scale, translucent borders, shadcn new-york). No font binary, logo file or template changed.
+
